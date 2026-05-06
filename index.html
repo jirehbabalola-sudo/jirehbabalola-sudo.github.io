@@ -7,6 +7,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -473,6 +474,71 @@ nav{
     margin-bottom:40px;
 }
 
+.contact-links{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.contact-card{
+    background:#f8fafc;
+    padding:28px;
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    text-decoration:none;
+    transition:0.3s;
+    border:1px solid #e5e7eb;
+}
+
+.contact-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+.contact-card h3{
+    color:#111827;
+    margin-bottom:6px;
+    font-size:1.2rem;
+}
+
+.contact-card p{
+    color:#6b7280;
+    font-size:0.95rem;
+    margin:0;
+}
+
+.icon{
+    width:65px;
+    height:65px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.6rem;
+    font-weight:800;
+    color:white;
+    flex-shrink:0;
+}
+
+.linkedin{
+    background:#0077b5;
+}
+
+.email{
+    background:#ea4335;
+}
+
+.phone{
+    background:#10b981;
+}
+
+.resume{
+    background:#7c3aed;
+}
+
 /* ========================= */
 /* FOOTER */
 /* ========================= */
@@ -530,16 +596,19 @@ footer{
     font-size:2.5rem;
 }
 
+.contact-box{
+    padding:50px 30px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- ========================= -->
 <!-- NAVIGATION -->
-<!-- ========================= -->
 
 <nav>
 
@@ -562,9 +631,7 @@ Jireh Babalola
 
 </nav>
 
-<!-- ========================= -->
 <!-- HERO -->
-<!-- ========================= -->
 
 <div class="container">
 
@@ -608,11 +675,6 @@ Contact Me
 
 <div class="hero-image">
 
-<!-- IMPORTANT -->
-<!-- PUT YOUR IMAGE -->
-<!-- SAME FOLDER -->
-<!-- AS index.html -->
-
 <img src="./jireh.png" alt="Jireh Babalola">
 
 </div>
@@ -623,9 +685,7 @@ Contact Me
 
 </div>
 
-<!-- ========================= -->
 <!-- METRICS -->
-<!-- ========================= -->
 
 <div class="container metrics">
 
@@ -655,9 +715,7 @@ Contact Me
 
 </div>
 
-<!-- ========================= -->
 <!-- ABOUT -->
-<!-- ========================= -->
 
 <section id="about">
 
@@ -713,9 +771,7 @@ My long-term vision is to contribute to energy modernization, smart infrastructu
 
 </section>
 
-<!-- ========================= -->
 <!-- EXPERTISE -->
-<!-- ========================= -->
 
 <section id="expertise">
 
@@ -806,9 +862,7 @@ A combination of advanced engineering systems, operational leadership, infrastru
 
 </section>
 
-<!-- ========================= -->
 <!-- PROJECTS -->
-<!-- ========================= -->
 
 <section id="projects">
 
@@ -915,9 +969,7 @@ Integrated cross-functional communication strategies, schedule optimization, and
 
 </section>
 
-<!-- ========================= -->
 <!-- MBA -->
-<!-- ========================= -->
 
 <section id="mba">
 
@@ -985,9 +1037,7 @@ Developed leadership capabilities in emotional intelligence, team development, m
 
 </section>
 
-<!-- ========================= -->
 <!-- LEADERSHIP -->
-<!-- ========================= -->
 
 <section id="leadership">
 
@@ -1043,9 +1093,7 @@ Passionate about supporting future engineers, increasing STEM representation, an
 
 </section>
 
-<!-- ========================= -->
 <!-- CONTACT -->
-<!-- ========================= -->
 
 <section id="contact">
 
@@ -1058,12 +1106,88 @@ Let's Build The Future of <span class="gradient">Energy Infrastructure</span>
 </h2>
 
 <p>
-Open to engineering leadership opportunities, infrastructure modernization initiatives, operational strategy collaborations, and innovative energy transformation projects.
+Open to engineering leadership opportunities, infrastructure modernization initiatives, operational strategy collaborations, technical program management roles, and innovative energy transformation projects.
+
+I am passionate about resilient infrastructure systems, sustainable engineering innovation, leadership development, operational excellence, and mentoring the next generation of engineering professionals.
 </p>
 
-<a href="mailto:your@email.com" class="btn btn-primary">
-Contact Me
+<div class="contact-links">
+
+<a 
+href="https://www.linkedin.com/in/jirehbablola/" 
+target="_blank"
+class="contact-card"
+>
+
+<div class="icon linkedin">
+in
+</div>
+
+<div>
+<h3>LinkedIn</h3>
+<p>Professional Network</p>
+</div>
+
 </a>
+
+<a 
+href="mailto:Jirehbab@gmail.com"
+class="contact-card"
+>
+
+<div class="icon email">
+✉
+</div>
+
+<div>
+<h3>Email</h3>
+<p>Jirehbab@gmail.com</p>
+</div>
+
+</a>
+
+<a 
+href="tel:+16124473624"
+class="contact-card"
+>
+
+<div class="icon phone">
+☎
+</div>
+
+<div>
+<h3>Phone</h3>
+<p>+1 (612) 447-3624</p>
+</div>
+
+</a>
+
+<a 
+href="https://drive.google.com/file/d/1TpShSk_yI9atnpY8jcivuUlUax-jylPI/view?usp=drive_link"
+target="_blank"
+class="contact-card"
+>
+
+<div class="icon resume">
+📄
+</div>
+
+<div>
+<h3>Resume</h3>
+<p>Download CV</p>
+</div>
+
+</a>
+
+</div>
+
+<div style="margin-top:50px;">
+
+<a href="mailto:Jirehbab@gmail.com" class="btn btn-primary">
+Let's Connect 🚀
+</a>
+
+</div>
 
 </div>
 
@@ -1071,9 +1195,7 @@ Contact Me
 
 </section>
 
-<!-- ========================= -->
 <!-- FOOTER -->
-<!-- ========================= -->
 
 <footer>
 
@@ -1082,4 +1204,5 @@ Contact Me
 </footer>
 
 </body>
+
 </html>
