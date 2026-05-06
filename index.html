@@ -1,892 +1,893 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jireh Babalola | Engineer & Leader</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Jireh Babalola | Engineer, Leader & MBA</title>
+  <meta name="description" content="Substation Engineer & Project Manager | MBA Candidate | Diversity Advocate at Great River Energy"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Raleway:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --bg:#1c2b3a; --bg2:#253347; --bg3:#1a2535; --bg4:#0f1a27;
+      --ar:#ff6464; --at:#4ecdc4; --ag:#ffd166; --ap:#a78bfa;
+      --grad:linear-gradient(135deg,#ff6464,#4ecdc4);
+      --grad2:linear-gradient(135deg,#667eea,#764ba2);
+      --grad3:linear-gradient(135deg,#ffd166,#ff6464);
+      --text:#e9f0f8; --text2:#98a7b5; --text3:#5a7a96;
+      --brd:rgba(255,255,255,0.07); --brd2:rgba(255,255,255,0.12);
+      --shad:0 8px 32px rgba(0,0,0,0.4);
+      --shad2:0 20px 60px rgba(0,0,0,0.5);
+      --fh:'Raleway',sans-serif; --fb:'Nunito',sans-serif; --fm:'Fira Code',monospace;
+      --r:12px; --r2:20px;
+    }
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:16px;line-height:1.75;overflow-x:hidden;}
+    ::selection{background:rgba(78,205,196,0.3);color:var(--text);}
 
-    :root {
-      --bg:        #07101f;
-      --bg2:       #0c1830;
-      --bg3:       #111f3a;
-      --teal:      #05c9b0;
-      --teal-dim:  #06a08c;
-      --gold:      #e8a825;
-      --gold-dim:  #b88218;
-      --text:      #e8eef8;
-      --text-2:    #8ba3c9;
-      --text-3:    #4f6a8f;
-      --border:    rgba(255,255,255,0.08);
-      --font-h:    'Syne', sans-serif;
-      --font-b:    'IBM Plex Sans', sans-serif;
-      --font-m:    'IBM Plex Mono', monospace;
-    }
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar{width:6px;}
+    ::-webkit-scrollbar-track{background:var(--bg4);}
+    ::-webkit-scrollbar-thumb{background:var(--grad);border-radius:3px;}
 
-    html { scroll-behavior: smooth; }
+    /* ── NAV ── */
+    nav{
+      position:fixed;top:0;width:100%;z-index:1000;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:.9rem 5vw;
+      background:rgba(15,26,39,0.88);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--brd);
+      transition:all .3s;
+    }
+    nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.5);}
+    .nav-logo{
+      font-family:var(--fh);font-weight:900;font-size:1.25rem;
+      background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      text-decoration:none;letter-spacing:-.01em;
+    }
+    .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+    .nav-links a{font-size:.88rem;font-weight:700;color:var(--text2);text-decoration:none;position:relative;transition:color .2s;letter-spacing:.02em;}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;border-radius:2px;background:var(--grad);transform:scaleX(0);transition:transform .25s;}
+    .nav-links a:hover{color:var(--text);}
+    .nav-links a:hover::after{transform:scaleX(1);}
+    .nav-resume{
+      padding:.45rem 1.2rem;border-radius:50px;
+      background:var(--grad);color:#fff;font-size:.82rem;font-weight:800;
+      text-decoration:none;letter-spacing:.04em;
+      transition:opacity .2s,transform .2s;
+    }
+    .nav-resume:hover{opacity:.85;transform:translateY(-1px);}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-b);
-      font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
+    /* ── HERO ── */
+    #hero{min-height:100vh;display:flex;align-items:center;padding:5.5rem 5vw 3rem;position:relative;overflow:hidden;}
+    #hero::before{
+      content:'';position:absolute;top:-20%;right:-10%;width:600px;height:600px;
+      background:radial-gradient(circle,rgba(78,205,196,.06) 0%,transparent 70%);
+      pointer-events:none;
     }
+    .hero-inner{width:100%;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center;}
+    .hero-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:.8rem;}
+    .hero-eyebrow-line{width:32px;height:2px;background:var(--grad);border-radius:1px;}
+    .hero-eyebrow-text{font-family:var(--fm);font-size:.78rem;color:var(--at);letter-spacing:.2em;text-transform:uppercase;}
+    h1.hero-name{font-family:var(--fh);font-size:clamp(3rem,5.8vw,5.2rem);font-weight:900;line-height:1.06;margin-bottom:.7rem;letter-spacing:-.02em;}
+    .name-grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .typewriter-row{font-family:var(--fh);font-size:clamp(1.3rem,2.2vw,1.9rem);font-weight:700;min-height:2.4rem;margin-bottom:1.4rem;display:flex;align-items:center;gap:.4rem;}
+    .tw-label{color:var(--text2);}
+    #tw{color:var(--ar);}
+    .cursor{display:inline-block;width:2px;height:1em;background:var(--ar);vertical-align:text-bottom;animation:blink .7s infinite;}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+    .hero-bio{font-size:1rem;color:var(--text2);max-width:500px;margin-bottom:1.8rem;line-height:1.85;}
+    .hero-bio strong{color:var(--text);font-weight:700;}
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.1rem 4vw;
-      background: rgba(7,16,31,0.82);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      font-family: var(--font-h);
-      font-weight: 700;
-      font-size: 1.15rem;
-      letter-spacing: 0.04em;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .nav-logo span { color: var(--teal); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-family: var(--font-m);
-      font-size: 0.78rem;
-      color: var(--text-2);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--teal); }
+    /* Social pills */
+    .social-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2.2rem;}
+    .sp{display:flex;align-items:center;gap:.45rem;padding:.5rem 1rem;border-radius:50px;font-size:.82rem;font-weight:700;text-decoration:none;border:1.5px solid transparent;transition:all .25s;}
+    .sp svg{width:16px;height:16px;flex-shrink:0;}
+    .sp-gh{background:rgba(255,255,255,.05);color:var(--text);border-color:rgba(255,255,255,.13);}
+    .sp-li{background:rgba(10,147,201,.12);color:#0a93c9;border-color:rgba(10,147,201,.35);}
+    .sp-em{background:rgba(255,100,100,.1);color:#f07373;border-color:rgba(255,100,100,.3);}
+    .sp:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3);}
 
-    /* HERO */
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 7rem 4vw 5rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      max-width: 1200px; margin: 0 auto; width: 100%;
-    }
-    .hero-tag {
-      font-family: var(--font-m);
-      font-size: 0.78rem;
-      color: var(--teal);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-      display: flex; align-items: center; gap: 0.75rem;
-    }
-    .hero-tag::before {
-      content: '';
-      display: block; width: 32px; height: 1px;
-      background: var(--teal);
-    }
-    h1 {
-      font-family: var(--font-h);
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1.02;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-    h1 .teal { color: var(--teal); }
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--text-2);
-      max-width: 480px;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-    }
-    .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.75rem 1.75rem;
-      border-radius: 4px;
-      font-family: var(--font-m);
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn-primary {
-      background: var(--teal);
-      color: #07101f;
-      border: 2px solid var(--teal);
-      font-weight: 500;
-    }
-    .btn-primary:hover { background: transparent; color: var(--teal); }
-    .btn-ghost {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+    /* CTA buttons */
+    .cta-row{display:flex;gap:1rem;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.82rem 2rem;border-radius:50px;font-family:var(--fb);font-size:.95rem;font-weight:800;text-decoration:none;cursor:pointer;transition:all .25s;border:none;}
+    .btn-g{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(255,100,100,.3);}
+    .btn-g:hover{box-shadow:0 8px 32px rgba(255,100,100,.5);transform:translateY(-2px);}
+    .btn-o{background:transparent;color:var(--text);border:2px solid rgba(255,255,255,.18);}
+    .btn-o:hover{border-color:var(--at);color:var(--at);transform:translateY(-2px);}
 
-    /* HERO STATS */
-    .hero-stats {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    .stat-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.5rem;
-      transition: border-color 0.2s;
-    }
-    .stat-card:hover { border-color: var(--teal); }
-    .stat-num {
-      font-family: var(--font-h);
-      font-size: 2.6rem;
-      font-weight: 800;
-      color: var(--teal);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-    .stat-label {
-      font-size: 0.82rem;
-      color: var(--text-2);
-      font-weight: 300;
-    }
-    .stat-big {
-      grid-column: 1 / -1;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .stat-big .stat-num { font-size: 2rem; }
+    /* Hero right */
+    .hero-right{display:flex;flex-direction:column;gap:1.5rem;}
+    .hero-lottie{width:100%;max-width:460px;filter:drop-shadow(0 0 50px rgba(78,205,196,.12));}
+    .hero-card-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+    .hero-mini-card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:1rem 1.1rem;transition:border-color .2s;}
+    .hero-mini-card:hover{border-color:rgba(78,205,196,.35);}
+    .hmc-num{font-family:var(--fh);font-size:1.8rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+    .hmc-lbl{font-size:.75rem;color:var(--text2);font-weight:600;margin-top:.2rem;}
 
-    /* SECTION */
-    section { padding: 6rem 4vw; max-width: 1200px; margin: 0 auto; }
-    .section-label {
-      font-family: var(--font-m);
-      font-size: 0.72rem;
-      color: var(--teal);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    h2 {
-      font-family: var(--font-h);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 3rem;
-      letter-spacing: -0.02em;
-    }
-    h2 em { color: var(--teal); font-style: normal; }
+    /* ── SECTION BASE ── */
+    .sw{padding:5.5rem 5vw;}
+    .si{max-width:1200px;margin:0 auto;}
+    .sec-head{text-align:center;margin-bottom:3.5rem;}
+    .sec-eyebrow{font-family:var(--fm);font-size:.72rem;color:var(--at);letter-spacing:.25em;text-transform:uppercase;margin-bottom:.5rem;}
+    .sec-head h2{font-family:var(--fh);font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-.02em;}
+    .sec-head h2 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .sec-bar{width:56px;height:4px;background:var(--grad);border-radius:2px;margin:.6rem auto 1rem;}
+    .sec-sub{font-size:.97rem;color:var(--text2);max-width:520px;margin:0 auto;}
 
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      max-width: 1200px; margin: 0 auto;
+    /* ── ABOUT ── */
+    #about{background:var(--bg3);}
+    .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:start;}
+    .about-text p{color:var(--text2);margin-bottom:1.1rem;font-size:.97rem;line-height:1.85;}
+    .about-text p strong{color:var(--text);font-weight:700;}
+    .about-text blockquote{
+      border-left:3px solid var(--at);padding-left:1.2rem;margin:1.5rem 0;
+      font-family:var(--fh);font-size:1.05rem;color:var(--text);font-weight:600;font-style:italic;
     }
+    .eq-box{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:1.5rem;margin-top:1.5rem;}
+    .eq-title{font-family:var(--fm);font-size:.72rem;color:var(--ag);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;}
+    .eq-bars{display:flex;flex-direction:column;gap:.75rem;}
+    .eq-row{display:flex;flex-direction:column;gap:.3rem;}
+    .eq-label{display:flex;justify-content:space-between;font-size:.82rem;font-weight:700;}
+    .eq-label span:first-child{color:var(--text);}
+    .eq-label span:last-child{color:var(--at);font-family:var(--fm);}
+    .eq-track{height:6px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden;}
+    .eq-fill{height:100%;border-radius:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform 1.2s ease;}
+    .eq-fill.run{transform:scaleX(1);}
+    .about-aside{display:flex;flex-direction:column;gap:1rem;}
+    .pipes-card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:1.5rem;}
+    .pipes-title{font-family:var(--fm);font-size:.72rem;color:var(--ap);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;}
+    .pipes-items{display:flex;flex-direction:column;gap:.6rem;}
+    .pipes-item{display:flex;align-items:flex-start;gap:.75rem;font-size:.88rem;}
+    .pipes-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:.45rem;}
+    .pd-p{background:var(--ar);}
+    .pd-i{background:var(--at);}
+    .pd-pe{background:var(--ag);}
+    .pd-e{background:var(--ap);}
+    .pd-s{background:#f97316;}
+    .pipes-item strong{color:var(--text);font-weight:700;}
+    .pipes-item span{color:var(--text2);}
+    .strength-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem;}
+    .sch{padding:.3rem .8rem;border-radius:50px;font-size:.75rem;font-weight:700;border:1px solid var(--brd);background:rgba(255,255,255,.04);color:var(--text2);transition:all .2s;}
+    .sch:hover{background:rgba(78,205,196,.12);color:var(--at);border-color:rgba(78,205,196,.3);}
 
-    /* ABOUT */
-    #about .about-grid {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 4rem;
-      align-items: start;
-    }
-    .about-text p {
-      color: var(--text-2);
-      margin-bottom: 1.2rem;
-      font-weight: 300;
-      font-size: 1.05rem;
-    }
-    .about-text p strong { color: var(--text); font-weight: 500; }
-    .about-aside { display: flex; flex-direction: column; gap: 1rem; }
-    .info-item {
-      display: flex; align-items: flex-start;
-      gap: 0.75rem;
-      padding: 1rem;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
-    .info-icon {
-      font-family: var(--font-m);
-      font-size: 0.7rem;
-      color: var(--teal);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      min-width: 52px;
-      margin-top: 0.1rem;
-    }
-    .info-val { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+    /* ── SKILLS ── */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.4rem;}
+    .skill-card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:1.6rem;box-shadow:var(--shad);transition:transform .3s,border-color .3s,box-shadow .3s;}
+    .skill-card:hover{transform:translateY(-6px);border-color:rgba(78,205,196,.3);box-shadow:var(--shad2);}
+    .sc-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem;}
+    .sc-icon{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+    .i-t{background:rgba(78,205,196,.12);}  .i-r{background:rgba(255,100,100,.12);}
+    .i-p{background:rgba(167,139,250,.12);} .i-g{background:rgba(255,209,102,.12);}
+    .i-b{background:rgba(80,160,255,.12);}  .i-gr{background:rgba(80,220,130,.12);}
+    .sc-title{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--text);}
+    .stags{display:flex;flex-wrap:wrap;gap:.4rem;}
+    .stag{padding:.25rem .7rem;border-radius:50px;font-size:.75rem;font-weight:700;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:var(--text2);transition:all .2s;cursor:default;}
+    .stag:hover{background:rgba(78,205,196,.12);color:var(--at);border-color:rgba(78,205,196,.3);}
 
-    /* EXPERIENCE */
-    #experience { max-width: 1200px; margin: 0 auto; padding: 6rem 4vw; }
-    .exp-list { display: flex; flex-direction: column; gap: 0; }
-    .exp-item {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 2.5rem;
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--border);
-      position: relative;
+    /* ── PROJECTS ── */
+    #projects{background:var(--bg3);}
+    .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:1.5rem;}
+    .proj-card{
+      background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r2);
+      padding:2rem;box-shadow:var(--shad);
+      transition:transform .3s,border-color .3s,box-shadow .3s;
+      position:relative;overflow:hidden;display:flex;flex-direction:column;
     }
-    .exp-item:last-child { border-bottom: none; }
-    .exp-meta { position: sticky; top: 6rem; align-self: start; }
-    .exp-date {
-      font-family: var(--font-m);
-      font-size: 0.75rem;
-      color: var(--teal);
-      letter-spacing: 0.1em;
-      margin-bottom: 0.5rem;
+    .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+    .pc-1::before{background:var(--grad);}
+    .pc-2::before{background:var(--grad2);}
+    .pc-3::before{background:var(--grad3);}
+    .pc-4::before{background:linear-gradient(135deg,#4ecdc4,#a78bfa);}
+    .pc-5::before{background:linear-gradient(135deg,#ffd166,#06d6a0);}
+    .pc-6::before{background:linear-gradient(135deg,#a78bfa,#f472b6);}
+    .proj-card:hover{transform:translateY(-6px);border-color:rgba(78,205,196,.3);box-shadow:var(--shad2);}
+    .proj-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
+    .proj-icon{font-size:2rem;}
+    .proj-impact{
+      background:rgba(78,205,196,.12);border:1px solid rgba(78,205,196,.25);
+      color:var(--at);font-family:var(--fm);font-size:.75rem;font-weight:700;
+      padding:.3rem .75rem;border-radius:50px;white-space:nowrap;
     }
-    .exp-company {
-      font-family: var(--font-h);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-2);
-    }
-    .exp-title {
-      font-family: var(--font-h);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-    .exp-body p {
-      color: var(--text-2);
-      font-weight: 300;
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-    }
-    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .exp-bullets li {
-      display: flex; gap: 0.75rem;
-      font-size: 0.9rem; color: var(--text-2); font-weight: 300;
-    }
-    .exp-bullets li::before {
-      content: '→';
-      color: var(--teal);
-      flex-shrink: 0;
-    }
-    .exp-bullets li strong { color: var(--text); font-weight: 500; }
-    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
-    .tag {
-      font-family: var(--font-m);
-      font-size: 0.72rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 3px;
-      letter-spacing: 0.08em;
-    }
-    .tag-teal { background: rgba(5,201,176,0.1); color: var(--teal); border: 1px solid rgba(5,201,176,0.25); }
-    .tag-gold  { background: rgba(232,168,37,0.1); color: var(--gold); border: 1px solid rgba(232,168,37,0.25); }
-    .tag-dim   { background: rgba(255,255,255,0.04); color: var(--text-2); border: 1px solid var(--border); }
+    .proj-impact.pi-r{background:rgba(255,100,100,.12);border-color:rgba(255,100,100,.25);color:var(--ar);}
+    .proj-impact.pi-g{background:rgba(255,209,102,.12);border-color:rgba(255,209,102,.25);color:var(--ag);}
+    .proj-impact.pi-p{background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.25);color:var(--ap);}
+    .proj-org{font-family:var(--fm);font-size:.72rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;}
+    .proj-title{font-family:var(--fh);font-size:1.15rem;font-weight:800;color:var(--text);margin-bottom:.75rem;line-height:1.3;}
+    .proj-desc{font-size:.88rem;color:var(--text2);line-height:1.75;flex:1;margin-bottom:1.2rem;}
+    .proj-outcomes{margin-bottom:1.3rem;}
+    .proj-outcome-title{font-family:var(--fm);font-size:.68rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+    .proj-outcome-list{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
+    .proj-outcome-list li{display:flex;gap:.6rem;font-size:.83rem;color:var(--text2);}
+    .proj-outcome-list li::before{content:'▹';color:var(--at);flex-shrink:0;}
+    .proj-outcome-list li strong{color:var(--text);font-weight:700;}
+    .proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+    .ptag{padding:.2rem .6rem;border-radius:50px;font-size:.71rem;font-weight:700;background:rgba(255,255,255,.04);border:1px solid var(--brd);color:var(--text2);}
 
-    /* SKILLS */
-    #skills { padding: 6rem 4vw; }
-    #skills > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .skill-group {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.75rem;
-      transition: border-color 0.2s;
-    }
-    .skill-group:hover { border-color: var(--teal); }
-    .skill-group-title {
-      font-family: var(--font-h);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 1rem;
-    }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    /* ── EXPERIENCE ── */
+    .exp-list{display:flex;flex-direction:column;}
+    .exp-card{display:grid;grid-template-columns:190px 1fr;gap:2rem;padding:2.5rem 0;border-bottom:1px solid var(--brd);position:relative;}
+    .exp-card:last-child{border-bottom:none;}
+    .exp-card::before{content:'';position:absolute;left:181px;top:0;bottom:0;width:1px;background:var(--brd);}
+    .exp-card::after{content:'';position:absolute;left:174px;top:2.7rem;width:14px;height:14px;border-radius:50%;background:var(--grad);box-shadow:0 0 16px rgba(255,100,100,.5);}
+    .exp-date{font-size:.8rem;font-weight:700;color:var(--at);font-family:var(--fm);margin-bottom:.3rem;}
+    .exp-co{font-size:.88rem;font-weight:700;color:var(--text2);line-height:1.4;}
+    .exp-badge{display:inline-block;margin-top:.5rem;padding:.2rem .6rem;border-radius:50px;font-size:.68rem;font-weight:700;background:rgba(78,205,196,.1);color:var(--at);border:1px solid rgba(78,205,196,.25);}
+    .exp-role{font-family:var(--fh);font-size:1.25rem;font-weight:800;color:var(--text);margin-bottom:.6rem;}
+    .exp-desc{font-size:.92rem;color:var(--text2);margin-bottom:1rem;line-height:1.8;}
+    .exp-ul{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem;}
+    .exp-ul li{display:flex;gap:.7rem;font-size:.88rem;color:var(--text2);}
+    .exp-ul li::before{content:'▹';color:var(--at);flex-shrink:0;margin-top:.05rem;}
+    .exp-ul li strong{color:var(--text);font-weight:700;}
+    .etags{display:flex;flex-wrap:wrap;gap:.4rem;}
+    .et{padding:.22rem .65rem;border-radius:50px;font-size:.73rem;font-weight:700;background:rgba(78,205,196,.08);border:1px solid rgba(78,205,196,.22);color:var(--at);}
+    .etr{padding:.22rem .65rem;border-radius:50px;font-size:.73rem;font-weight:700;background:rgba(255,100,100,.08);border:1px solid rgba(255,100,100,.22);color:var(--ar);}
 
-    /* EDUCATION */
-    #education { padding: 6rem 4vw; max-width: 1200px; margin: 0 auto; }
-    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .edu-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      transition: border-color 0.2s;
-    }
-    .edu-card:hover { border-color: var(--gold); }
-    .edu-school {
-      font-family: var(--font-m);
-      font-size: 0.72rem;
-      color: var(--gold);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .edu-degree {
-      font-family: var(--font-h);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-    .edu-year { font-size: 0.85rem; color: var(--text-2); }
+    /* ── EDUCATION ── */
+    #education{background:var(--bg3);}
+    .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.5rem;}
+    .edu-card{background:var(--bg2);border-radius:var(--r);padding:2rem;box-shadow:var(--shad);position:relative;overflow:hidden;transition:transform .3s;}
+    .edu-card:hover{transform:translateY(-5px);}
+    .edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+    .edu-card.g2::before{background:var(--grad2);}
+    .edu-badge{display:inline-block;padding:.28rem .8rem;border-radius:50px;font-size:.73rem;font-weight:700;background:rgba(78,205,196,.1);color:var(--at);border:1px solid rgba(78,205,196,.22);margin-bottom:1rem;}
+    .edu-deg{font-family:var(--fh);font-size:1.2rem;font-weight:800;color:var(--text);margin-bottom:.35rem;}
+    .edu-sch{font-size:.88rem;color:var(--text2);font-weight:700;margin-bottom:.25rem;}
+    .edu-yr{font-size:.8rem;color:var(--ar);font-weight:700;margin-bottom:1rem;}
+    .edu-highlights{list-style:none;display:flex;flex-direction:column;gap:.35rem;}
+    .edu-highlights li{display:flex;gap:.6rem;font-size:.82rem;color:var(--text2);}
+    .edu-highlights li::before{content:'▹';color:var(--at);flex-shrink:0;}
+    .edu-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem;}
+    .edu-tag{padding:.2rem .6rem;border-radius:50px;font-size:.7rem;font-weight:700;background:rgba(255,255,255,.04);color:var(--text2);border:1px solid var(--brd);}
 
-    /* LEADERSHIP */
-    #leadership { padding: 6rem 4vw; max-width: 1200px; margin: 0 auto; }
-    .lead-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .lead-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.75rem;
-      transition: border-color 0.2s;
-    }
-    .lead-card:hover { border-color: var(--teal); }
-    .lead-role {
-      font-family: var(--font-h);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-    .lead-org {
-      font-family: var(--font-m);
-      font-size: 0.72rem;
-      color: var(--teal);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-    .lead-desc { font-size: 0.88rem; color: var(--text-2); font-weight: 300; }
+    /* CERTS */
+    .certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1.5rem;}
+    .cert-card{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);transition:border-color .2s;}
+    .cert-card:hover{border-color:rgba(78,205,196,.3);}
+    .cert-ic{font-size:1.5rem;flex-shrink:0;}
+    .cert-nm{font-size:.88rem;font-weight:700;color:var(--text);}
+    .cert-st{font-size:.73rem;font-weight:700;}
+    .st-ok{color:var(--at);} .st-wip{color:var(--ar);}
 
-    /* CERTIFICATIONS */
-    .cert-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
-    .cert-pill {
-      display: flex; align-items: center; gap: 0.6rem;
-      padding: 0.6rem 1.2rem;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-    }
-    .cert-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .dot-green { background: var(--teal); }
-    .dot-amber { background: var(--gold); }
-    .cert-name { font-size: 0.88rem; color: var(--text); }
-    .cert-status {
-      font-family: var(--font-m);
-      font-size: 0.7rem;
-      color: var(--text-3);
-    }
+    /* ── MBA OUTCOMES ── */
+    #outcomes{background:var(--bg4);}
+    .outcomes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;}
+    .oc-card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:1.4rem;transition:border-color .3s,transform .3s;}
+    .oc-card:hover{border-color:rgba(167,139,250,.35);transform:translateY(-3px);}
+    .oc-num{font-family:var(--fm);font-size:.72rem;color:var(--ap);letter-spacing:.1em;margin-bottom:.4rem;}
+    .oc-title{font-family:var(--fh);font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:.5rem;line-height:1.35;}
+    .oc-desc{font-size:.82rem;color:var(--text2);line-height:1.7;}
 
-    /* CONTACT */
-    #contact {
-      padding: 6rem 4vw;
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-    }
-    #contact > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-    .contact-left p {
-      color: var(--text-2);
-      font-weight: 300;
-      max-width: 400px;
-      margin-bottom: 2rem;
-    }
-    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-    .contact-link {
-      display: flex; align-items: center; gap: 1rem;
-      padding: 1rem 1.25rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      text-decoration: none;
-      transition: border-color 0.2s;
-    }
-    .contact-link:hover { border-color: var(--teal); }
-    .contact-link-icon {
-      font-family: var(--font-m);
-      font-size: 0.7rem;
-      color: var(--teal);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      min-width: 60px;
-    }
-    .contact-link-val { font-size: 0.9rem; color: var(--text); }
-    .affiliations { margin-top: 2rem; }
-    .aff-title {
-      font-family: var(--font-m);
-      font-size: 0.72rem;
-      color: var(--text-3);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-    .aff-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .aff-badge {
-      padding: 0.4rem 0.9rem;
-      background: rgba(5,201,176,0.06);
-      border: 1px solid rgba(5,201,176,0.2);
-      border-radius: 3px;
-      font-family: var(--font-m);
-      font-size: 0.72rem;
-      color: var(--teal);
-      letter-spacing: 0.08em;
-    }
+    /* ── LEADERSHIP ── */
+    .lead-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem;}
+    .lead-card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:1.6rem;box-shadow:var(--shad);transition:transform .3s,border-color .3s;}
+    .lead-card:hover{transform:translateY(-4px);border-color:rgba(78,205,196,.3);}
+    .lead-badge{display:inline-block;padding:.22rem .7rem;border-radius:50px;font-size:.7rem;font-weight:700;background:rgba(78,205,196,.08);color:var(--at);border:1px solid rgba(78,205,196,.22);margin-bottom:.65rem;}
+    .lead-role{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--text);margin-bottom:.4rem;}
+    .lead-desc{font-size:.85rem;color:var(--text2);line-height:1.7;}
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 1.5rem 4vw;
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      font-family: var(--font-m);
-      font-size: 0.75rem;
-      color: var(--text-3);
-      letter-spacing: 0.05em;
-    }
+    /* ── CONTACT ── */
+    #contact{background:var(--bg4);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    .cl-title{font-family:var(--fh);font-size:1.6rem;font-weight:900;color:var(--text);margin-bottom:.9rem;}
+    .contact-left > p{font-size:.94rem;color:var(--text2);margin-bottom:1.75rem;max-width:380px;line-height:1.8;}
+    .c-links{display:flex;flex-direction:column;gap:.8rem;}
+    .c-link{display:flex;align-items:center;gap:1rem;padding:.9rem 1.2rem;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);text-decoration:none;transition:all .25s;}
+    .c-link:hover{border-color:rgba(78,205,196,.4);transform:translateX(5px);}
+    .c-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+    .c-lbl{font-size:.68rem;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;}
+    .c-val{font-size:.88rem;font-weight:700;color:var(--text);}
+    .cright{display:flex;flex-direction:column;gap:1.3rem;}
+    .cp-card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:1.6rem;position:relative;overflow:hidden;}
+    .cp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad2);}
+    .cp-lbl{font-family:var(--fm);font-size:.68rem;color:var(--text2);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;}
+    .cp-q{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--text);line-height:1.55;}
+    .cp-q span{background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .aff-card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:1.6rem;}
+    .aff-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.65rem;}
+    .aff-pill{padding:.3rem .85rem;border-radius:50px;font-size:.76rem;font-weight:700;background:rgba(78,205,196,.07);color:var(--at);border:1px solid rgba(78,205,196,.22);}
 
-    /* ANIMATIONS */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    /* ── FOOTER ── */
+    footer{text-align:center;padding:2rem;background:var(--bg4);border-top:1px solid var(--brd);}
+    .footer-inner{max-width:1200px;margin:0 auto;}
+    .footer-name{font-family:var(--fh);font-size:1.1rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.4rem;}
+    footer p{font-size:.82rem;color:var(--text2);}
+    footer a{color:var(--at);text-decoration:none;font-weight:700;}
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { display: none; }
-      .hero-grid, #about .about-grid, .exp-item, .contact-grid, .edu-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      h1 { font-size: 2.6rem; }
-      .hero-stats { grid-template-columns: 1fr 1fr; }
-      section, #experience, #education, #leadership, #contact { padding: 4rem 1.25rem; }
-      .exp-meta { position: static; }
+    /* ── ANIMATIONS ── */
+    .fi    {opacity:0;transform:translateY(28px); transition:opacity .7s,transform .7s;}
+    .fi-l  {opacity:0;transform:translateX(-28px);transition:opacity .7s,transform .7s;}
+    .fi-r  {opacity:0;transform:translateX(28px); transition:opacity .7s,transform .7s;}
+    .fi.v,.fi-l.v,.fi-r.v{opacity:1;transform:none;}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px){
+      .hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem;}
+      .hero-right{display:none;}
+      .exp-card{grid-template-columns:1fr;}
+      .exp-card::before,.exp-card::after{display:none;}
+      .nav-links{display:none;}
     }
+    @media(max-width:600px){.sw{padding:3.5rem 1.25rem;}.proj-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#hero">JB<span>.</span></a>
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <a class="nav-logo" href="#hero">Jireh Babalola</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#outcomes">MBA</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="https://drive.google.com/file/d/1TpShSk_yI9atnpY8jcivuUlUax-jylPI/view?usp=sharing" target="_blank" rel="noopener" class="nav-resume">Resume ↗</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- ══ HERO ══ -->
 <section id="hero">
-  <div class="hero-grid">
-    <div>
-      <p class="hero-tag">Substation Engineer &amp; MBA Candidate</p>
-      <h1>Jireh<br /><span class="teal">Babalola</span></h1>
-      <p class="hero-sub">
-        Bridging electrical engineering and strategic leadership — designing resilient power systems, driving project excellence, and championing diversity in the energy sector.
+  <div class="hero-inner">
+    <div class="fi-l">
+      <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><span class="hero-eyebrow-text">👋 Hello, World!</span></div>
+      <h1 class="hero-name">I'm <span class="name-grad">Jireh<br>Babalola</span></h1>
+      <div class="typewriter-row">
+        <span class="tw-label">I am a</span><span id="tw"></span><span class="cursor"></span>
+      </div>
+      <p class="hero-bio">
+        <strong>Substation Engineer & Project Manager</strong> at Great River Energy with a BS in Electrical Engineering and an MBA (Dec 2025) from Bethel University. I bridge deep technical expertise with strategic leadership — designing resilient power systems, driving project excellence, and <strong>championing diversity</strong> in the energy sector.
       </p>
-      <div class="btn-row">
-        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        <a href="#experience" class="btn btn-ghost">View My Work</a>
-        <!-- UPDATE: Replace # with your actual resume link -->
-        <a href="#" class="btn btn-ghost" target="_blank" rel="noopener">Resume ↗</a>
+      <div class="social-row">
+        <a href="https://github.com/jirehbabalola-sudo" target="_blank" rel="noopener" class="sp sp-gh">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/jirehbablola/" target="_blank" rel="noopener" class="sp sp-li">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn
+        </a>
+        <a href="mailto:Jirehbab@gmail.com" class="sp sp-em">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email
+        </a>
+      </div>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-g">View My Projects 🚀</a>
+        <a href="https://drive.google.com/file/d/1TpShSk_yI9atnpY8jcivuUlUax-jylPI/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-o">Resume ↗</a>
       </div>
     </div>
-    <div class="hero-stats fade-up">
-      <div class="stat-card">
-        <div class="stat-num">50%</div>
-        <div class="stat-label">Improvement in fault detection efficiency</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">30%</div>
-        <div class="stat-label">Reduction in project timelines</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">5+</div>
-        <div class="stat-label">Years in power systems &amp; protection</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">MBA</div>
-        <div class="stat-label">Bethel University — Dec 2025</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- ABOUT -->
-<section id="about">
-  <p class="section-label">About Me</p>
-  <h2>Engineer. Leader. <em>Changemaker.</em></h2>
-  <div class="about-grid fade-up">
-    <div class="about-text">
-      <p>
-        I am a <strong>Substation Engineer &amp; Project Manager</strong> at Great River Energy with a passion for innovation, sustainability, and lifelong learning. My career sits at the intersection of deep technical expertise and people-centered leadership.
-      </p>
-      <p>
-        With a <strong>B.S. in Electrical Engineering</strong> from Bethel University and an MBA in progress, I have built the analytical foundation and business acumen to lead complex projects, mentor diverse teams, and drive long-term organizational success in the energy sector.
-      </p>
-      <p>
-        Beyond the technical, I am committed to <strong>diversity and inclusion</strong> — serving as Chair of the People of Color Group at Great River Energy, speaking at industry conferences, and advocating for STEM education in underrepresented communities.
-      </p>
-      <p>
-        My core purpose: <em>Understanding Hope</em> — creating opportunities, fostering resilience, and believing in greater possibilities for the people and communities I serve.
-      </p>
-    </div>
-    <div class="about-aside">
-      <div class="info-item">
-        <span class="info-icon">Role</span>
-        <span class="info-val">Substation Engineer &amp; Project Manager</span>
-      </div>
-      <div class="info-item">
-        <span class="info-icon">Based</span>
-        <span class="info-val">Maple Grove, MN</span>
-      </div>
-      <div class="info-item">
-        <span class="info-icon">Email</span>
-        <span class="info-val">Jirehbab@gmail.com</span>
-      </div>
-      <div class="info-item">
-        <span class="info-icon">Phone</span>
-        <span class="info-val">612-447-3624</span>
-      </div>
-      <div class="info-item">
-        <span class="info-icon">Focus</span>
-        <span class="info-val">Power Systems · Leadership · Sustainability</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <p class="section-label">Experience</p>
-  <h2>Where I've <em>Made Impact</em></h2>
-  <div class="exp-list">
-
-    <!-- GRE -->
-    <div class="exp-item fade-up">
-      <div class="exp-meta">
-        <p class="exp-date">Aug 2023 — Present</p>
-        <p class="exp-company">Great River Energy<br />Maple Grove, MN</p>
-      </div>
-      <div class="exp-body">
-        <p class="exp-title">Substation Engineer &amp; Project Manager</p>
-        <p>Lead substation protection and control upgrade projects from design through execution, ensuring delivery within budget, on schedule, and in full regulatory compliance.</p>
-        <ul class="exp-bullets">
-          <li>Designed and implemented advanced protection schemes for transformers, breakers, and reactors, improving <strong>fault detection efficiency by 50%</strong> and achieving NERC compliance.</li>
-          <li>Spearheaded efficiency initiatives that <strong>reduced project timelines by 30%</strong>, enhanced risk assessment strategies by 40%, and increased project success rates by 25%.</li>
-          <li>Conducted technical studies — relay coordination and fault current analysis — to enhance system reliability and resiliency.</li>
-          <li>Collaborated with internal teams, vendors, and field engineers; maintained compliance with IEEE, ANSI, and NESC standards.</li>
-          <li>Mentored junior engineers and interns, fostering knowledge transfer and professional growth.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="tag tag-teal">Relay Coordination</span>
-          <span class="tag tag-teal">NERC Compliance</span>
-          <span class="tag tag-teal">Substation Design</span>
-          <span class="tag tag-gold">Project Management</span>
-          <span class="tag tag-gold">Risk Mitigation</span>
-          <span class="tag tag-dim">SCADA</span>
-          <span class="tag tag-dim">IEEE / ANSI / NESC</span>
+    <div class="hero-right fi-r">
+      <lottie-player class="hero-lottie"
+        src="https://assets5.lottiefiles.com/packages/lf20_w51pcehl.json"
+        background="transparent" speed="1" loop autoplay>
+      </lottie-player>
+      <div class="hero-card-row">
+        <div class="hero-mini-card fi">
+          <div class="hmc-num" data-count="50">0%</div>
+          <div class="hmc-lbl">Fault Detection Boost</div>
+        </div>
+        <div class="hero-mini-card fi">
+          <div class="hmc-num" data-count="30">0%</div>
+          <div class="hmc-lbl">Faster Project Delivery</div>
+        </div>
+        <div class="hero-mini-card fi">
+          <div class="hmc-num" data-count="40">0%</div>
+          <div class="hmc-lbl">Risk Assessment Gain</div>
+        </div>
+        <div class="hero-mini-card fi">
+          <div class="hmc-num" data-count="20">0%</div>
+          <div class="hmc-lbl">Cost Savings Achieved</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Xcel -->
-    <div class="exp-item fade-up">
-      <div class="exp-meta">
-        <p class="exp-date">May 2021 — Jul 2023</p>
-        <p class="exp-company">Xcel Energy<br />Saint Paul, MN</p>
-      </div>
-      <div class="exp-body">
-        <p class="exp-title">System Protection Engineering Intern</p>
-        <p>Supported the design and analysis of substation protection systems while gaining hands-on experience across relay testing, SCADA integration, and power distribution studies.</p>
-        <ul class="exp-bullets">
-          <li>Assisted in relay coordination and fault current studies for substation protection systems.</li>
-          <li>Conducted relay testing, event analysis, and lightning protection assessments to improve power system resilience.</li>
-          <li>Developed one-line diagrams, grounding plans, and protection schemes.</li>
-          <li>Modeled protective relays using <strong>CAPÉ software</strong>, ensuring accuracy in fault response.</li>
-          <li>Gained hands-on experience with RTU configuration, SCADA integration, and automation technologies.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="tag tag-teal">CAPÉ Software</span>
-          <span class="tag tag-teal">RTU Configuration</span>
-          <span class="tag tag-dim">Fault Analysis</span>
-          <span class="tag tag-dim">SCADA Integration</span>
-          <span class="tag tag-dim">AutoCAD</span>
+<!-- ══ ABOUT ══ -->
+<div class="sw" id="about">
+  <div class="si">
+    <div class="sec-head fi">
+      <p class="sec-eyebrow">Who I Am</p>
+      <h2>About <span>Me</span></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="about-grid">
+      <div class="fi-l">
+        <div class="about-text">
+          <p>I am a <strong>Substation Engineer & Project Manager</strong> at Great River Energy, Maple Grove, MN, holding a Bachelor of Science in Electrical Engineering and currently completing my MBA — both from Bethel University. My career sits at the intersection of deep technical expertise and people-centered leadership.</p>
+          <p>My journey spans power system protection, relay coordination, SCADA integration, and full-cycle project management. I have led complex substation upgrade projects that measurably improved <strong>reliability, efficiency, and regulatory compliance</strong>. Beyond the technical, I am a committed advocate for diversity and inclusion — serving as Chair of the People of Color Group at GRE and mentoring the next generation of STEM professionals.</p>
+          <p>The MBA program at Bethel has sharpened my strategic thinking, financial acumen, and data-driven decision-making. I now approach engineering challenges with a holistic view — balancing operational efficiency, stakeholder needs, global market forces, and <strong>ethical leadership grounded in my Christian faith</strong>.</p>
+          <blockquote>"My core purpose is <em>Understanding Hope</em> — creating opportunities, fostering resilience, and believing in greater possibilities for every person I serve."</blockquote>
+          <p>My top StrengthsFinder themes are <strong>Achiever, Analytical, Strategic, Learner,</strong> and <strong>Responsibility</strong> — a combination that drives both rigorous problem-solving and purposeful team leadership.</p>
+        </div>
+
+        <!-- EQ Scores -->
+        <div class="eq-box fi">
+          <p class="eq-title">📊 Emotional Intelligence Progress (EQ Scores)</p>
+          <div class="eq-bars">
+            <div class="eq-row">
+              <div class="eq-label"><span>Overall EQ</span><span>87 / 100</span></div>
+              <div class="eq-track"><div class="eq-fill" style="--w:0.87"></div></div>
+            </div>
+            <div class="eq-row">
+              <div class="eq-label"><span>Self-Awareness</span><span>82 / 100</span></div>
+              <div class="eq-track"><div class="eq-fill" style="--w:0.82"></div></div>
+            </div>
+            <div class="eq-row">
+              <div class="eq-label"><span>Self-Management</span><span>91 / 100</span></div>
+              <div class="eq-track"><div class="eq-fill" style="--w:0.91"></div></div>
+            </div>
+            <div class="eq-row">
+              <div class="eq-label"><span>Social Awareness</span><span>87 / 100</span></div>
+              <div class="eq-track"><div class="eq-fill" style="--w:0.87"></div></div>
+            </div>
+            <div class="eq-row">
+              <div class="eq-label"><span>Relationship Management</span><span>87 / 100</span></div>
+              <div class="eq-track"><div class="eq-fill" style="--w:0.87"></div></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- SKILLS -->
-<section id="skills">
-  <p class="section-label">Technical Skills</p>
-  <h2>Tools &amp; <em>Expertise</em></h2>
-  <div class="skills-grid fade-up">
-    <div class="skill-group">
-      <p class="skill-group-title">Power Systems &amp; Protection</p>
-      <div class="skill-tags">
-        <span class="tag tag-teal">Relay Coordination</span>
-        <span class="tag tag-teal">Fault Analysis</span>
-        <span class="tag tag-teal">Substation Design</span>
-        <span class="tag tag-teal">SCADA Integration</span>
-        <span class="tag tag-teal">RTU Configuration</span>
-        <span class="tag tag-teal">Protection Schemes</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">Software</p>
-      <div class="skill-tags">
-        <span class="tag tag-dim">ASPEN</span>
-        <span class="tag tag-dim">CAPÉ</span>
-        <span class="tag tag-dim">AutoCAD</span>
-        <span class="tag tag-dim">MATLAB</span>
-        <span class="tag tag-dim">LabVIEW</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">Programming</p>
-      <div class="skill-tags">
-        <span class="tag tag-gold">Python</span>
-        <span class="tag tag-gold">C++</span>
-        <span class="tag tag-gold">Verilog</span>
-        <span class="tag tag-gold">Assembly</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">Project Management</p>
-      <div class="skill-tags">
-        <span class="tag tag-dim">Microsoft Project</span>
-        <span class="tag tag-dim">Primavera P6</span>
-        <span class="tag tag-dim">Budgeting</span>
-        <span class="tag tag-dim">Risk Mitigation</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">Regulatory &amp; Compliance</p>
-      <div class="skill-tags">
-        <span class="tag tag-teal">IEEE</span>
-        <span class="tag tag-teal">NERC</span>
-        <span class="tag tag-teal">NESC</span>
-        <span class="tag tag-teal">ANSI</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">Leadership Strengths</p>
-      <div class="skill-tags">
-        <span class="tag tag-gold">Strategic Thinking</span>
-        <span class="tag tag-gold">Achiever</span>
-        <span class="tag tag-gold">Analytical</span>
-        <span class="tag tag-gold">Learner</span>
-        <span class="tag tag-gold">Responsibility</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- EDUCATION -->
-<section id="education">
-  <p class="section-label">Education</p>
-  <h2>Academic <em>Foundation</em></h2>
-  <div class="edu-grid fade-up">
-    <div class="edu-card">
-      <p class="edu-school">Bethel University — Saint Paul, MN</p>
-      <p class="edu-degree">Master of Business Administration (MBA)</p>
-      <p class="edu-year">Expected: December 2025</p>
-      <div class="exp-tags" style="margin-top:1rem;">
-        <span class="tag tag-gold">Leadership</span>
-        <span class="tag tag-gold">Strategic Management</span>
-        <span class="tag tag-gold">Data Analytics</span>
-        <span class="tag tag-dim">Finance</span>
-        <span class="tag tag-dim">Operations</span>
-      </div>
-    </div>
-    <div class="edu-card">
-      <p class="edu-school">Bethel University — Saint Paul, MN</p>
-      <p class="edu-degree">B.S. in Electrical Engineering</p>
-      <p class="edu-year">Graduated: May 2023</p>
-      <div class="exp-tags" style="margin-top:1rem;">
-        <span class="tag tag-teal">Power Systems</span>
-        <span class="tag tag-teal">Circuit Design</span>
-        <span class="tag tag-teal">Control Systems</span>
-        <span class="tag tag-dim">Signal Processing</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Certifications -->
-  <div style="margin-top:3rem;" class="fade-up">
-    <p class="section-label" style="margin-bottom:0.75rem;">Certifications</p>
-    <div class="cert-row">
-      <div class="cert-pill">
-        <span class="cert-dot dot-amber"></span>
-        <span class="cert-name">Project Management Professional (PMP)</span>
-        <span class="cert-status">In Progress</span>
-      </div>
-      <div class="cert-pill">
-        <span class="cert-dot dot-amber"></span>
-        <span class="cert-name">NERC Certification</span>
-        <span class="cert-status">In Progress</span>
-      </div>
-      <div class="cert-pill">
-        <span class="cert-dot dot-green"></span>
-        <span class="cert-name">Advanced Relay Protection Training</span>
-        <span class="cert-status">Completed 2023</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- LEADERSHIP -->
-<section id="leadership">
-  <p class="section-label">Leadership &amp; Involvement</p>
-  <h2>Community &amp; <em>Advocacy</em></h2>
-  <div class="lead-grid fade-up">
-    <div class="lead-card">
-      <p class="lead-org">Great River Energy</p>
-      <p class="lead-role">Chair, People of Color Group</p>
-      <p class="lead-desc">Lead diversity, inclusion, and professional development initiatives — organizing events, volunteer programs, and fostering a culture of belonging.</p>
-    </div>
-    <div class="lead-card">
-      <p class="lead-org">Great River Energy</p>
-      <p class="lead-role">MEG Planning Committee Member</p>
-      <p class="lead-desc">Coordinate topics, logistics, and engagement strategies for cooperative member meetings and organizational initiatives.</p>
-    </div>
-    <div class="lead-card">
-      <p class="lead-org">Great River Energy</p>
-      <p class="lead-role">GRE Ambassador</p>
-      <p class="lead-desc">Represented the company at career fairs, advocating for the next generation of engineers and professionals in the energy sector.</p>
-    </div>
-    <div class="lead-card">
-      <p class="lead-org">Professional Speaking</p>
-      <p class="lead-role">Conference Speaker</p>
-      <p class="lead-desc">Frequent speaker at professional conferences on energy sector advancements, engineering best practices, and diversity in STEM.</p>
-    </div>
-    <div class="lead-card">
-      <p class="lead-org">STEM Advocacy</p>
-      <p class="lead-role">Mentor &amp; Community Advocate</p>
-      <p class="lead-desc">Passionate about mentoring aspiring engineers and advocating for STEM education in underrepresented communities.</p>
-    </div>
-    <div class="lead-card">
-      <p class="lead-org">Servant Leadership</p>
-      <p class="lead-role">Faith &amp; Work Integration</p>
-      <p class="lead-desc">Committed to integrating faith-based values in the workplace — fostering ethical decision-making, accountability, and servant leadership.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- CONTACT -->
-<div id="contact" style="padding: 6rem 4vw; background: var(--bg2); border-top: 1px solid var(--border);">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <p class="section-label">Contact</p>
-    <h2>Let's <em>Connect</em></h2>
-    <div class="contact-grid fade-up">
-      <div class="contact-left">
-        <p>Whether you're exploring collaboration opportunities, seeking a speaker for your next event, or simply want to connect — I'd love to hear from you.</p>
-        <div class="contact-links">
-          <a href="mailto:Jirehbab@gmail.com" class="contact-link">
-            <span class="contact-link-icon">Email</span>
-            <span class="contact-link-val">Jirehbab@gmail.com</span>
-          </a>
-          <a href="tel:+16124473624" class="contact-link">
-            <span class="contact-link-icon">Phone</span>
-            <span class="contact-link-val">612-447-3624</span>
-          </a>
-          <!-- UPDATE: Replace # with your actual LinkedIn URL -->
-          <a href="#" target="_blank" rel="noopener" class="contact-link">
-            <span class="contact-link-icon">LinkedIn</span>
-            <span class="contact-link-val">linkedin.com/in/jirehbabalola ↗</span>
-          </a>
-          <a href="https://github.com/jirehbabalola-sudo" target="_blank" rel="noopener" class="contact-link">
-            <span class="contact-link-icon">GitHub</span>
-            <span class="contact-link-val">github.com/jirehbabalola-sudo ↗</span>
-          </a>
+      <div class="about-aside">
+        <!-- PIPES framework -->
+        <div class="pipes-card fi">
+          <p class="pipes-title">🧭 PIPES Development Model</p>
+          <div class="pipes-items">
+            <div class="pipes-item"><div class="pipes-dot pd-p"></div><div><strong>Professionally</strong><br><span>Industry best practices, technical skills, communication, career advancement</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot pd-i"></div><div><strong>Intellectually</strong><br><span>Critical thinking, analytical reasoning, evidence-based analysis</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot pd-pe"></div><div><strong>Personally</strong><br><span>Strengths development, EQ growth, core purpose integration</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot pd-e"></div><div><strong>Ethically</strong><br><span>Character-based leadership, connecting values to action</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot" style="background:#f97316;"></div><div><strong>Spiritually</strong><br><span>Work/faith/life integration, servant leadership, integrity</span></div></div>
+          </div>
         </div>
-      </div>
-      <div class="affiliations">
-        <p class="aff-title">Professional Affiliations</p>
-        <div class="aff-badges">
-          <span class="aff-badge">IEEE — Member</span>
-          <span class="aff-badge">NSBE — Active Member</span>
-          <span class="aff-badge">SWE — Ally &amp; Contributor</span>
+
+        <!-- StrengthsFinder themes -->
+        <div class="pipes-card fi">
+          <p class="pipes-title">💪 StrengthsFinder Top 5</p>
+          <div class="pipes-items">
+            <div class="pipes-item"><div class="pipes-dot" style="background:var(--ar);"></div><div><strong>Achiever</strong> — <span>Drives constant productivity; sets and surpasses goals</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot" style="background:var(--at);"></div><div><strong>Analytical</strong> — <span>Dissects complexity; evidence-based solutions</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot" style="background:var(--ap);"></div><div><strong>Strategic</strong> — <span>Long-range planning; anticipates challenges</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot" style="background:var(--ag);"></div><div><strong>Learner</strong> — <span>Constantly acquiring new knowledge and adapting</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot" style="background:#4ade80;"></div><div><strong>Responsibility</strong> — <span>Strong sense of accountability; follows through</span></div></div>
+          </div>
         </div>
-        <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
-          <p style="font-family: var(--font-m); font-size: 0.72rem; color: var(--teal); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem;">Core Purpose</p>
-          <p style="font-family: var(--font-h); font-size: 1.3rem; font-weight: 600; color: var(--text); line-height: 1.4;">"Understanding Hope — creating opportunities and driving positive change."</p>
+
+        <!-- CareerLeader -->
+        <div class="pipes-card fi">
+          <p class="pipes-title">🎯 CareerLeader Insights</p>
+          <div class="pipes-items">
+            <div class="pipes-item"><div class="pipes-dot" style="background:var(--ar);"></div><div><strong>Top Skills</strong> — <span>Creative Thinking, Written Communication, Adaptability</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot" style="background:var(--at);"></div><div><strong>Top Motivators</strong> — <span>Affiliation, Lifestyle, Altruism</span></div></div>
+            <div class="pipes-item"><div class="pipes-dot" style="background:var(--ag);"></div><div><strong>Top Interests</strong> — <span>Application of Technology, Managing Teams, Quantitative Analysis</span></div></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ══ SKILLS ══ -->
+<div class="sw" id="skills" style="background:var(--bg3);">
+  <div class="si">
+    <div class="sec-head fi">
+      <p class="sec-eyebrow">Technical Expertise</p>
+      <h2>What I <span>Do</span></h2>
+      <div class="sec-bar"></div>
+      <p class="sec-sub">My skills span power systems engineering, software tooling, programming, and strategic leadership.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fi"><div class="sc-head"><div class="sc-icon i-t">⚡</div><div class="sc-title">Power Systems & Protection</div></div><div class="stags"><span class="stag">Relay Coordination</span><span class="stag">Fault Analysis</span><span class="stag">Substation Design</span><span class="stag">SCADA Integration</span><span class="stag">RTU Configuration</span><span class="stag">Protection Schemes</span><span class="stag">NERC Compliance</span><span class="stag">IEEE Standards</span></div></div>
+      <div class="skill-card fi"><div class="sc-head"><div class="sc-icon i-b">🖥️</div><div class="sc-title">Engineering Software</div></div><div class="stags"><span class="stag">ASPEN</span><span class="stag">CAPÉ</span><span class="stag">AutoCAD</span><span class="stag">MATLAB</span><span class="stag">LabVIEW</span></div></div>
+      <div class="skill-card fi"><div class="sc-head"><div class="sc-icon i-p">💻</div><div class="sc-title">Programming</div></div><div class="stags"><span class="stag">Python</span><span class="stag">C++</span><span class="stag">Verilog</span><span class="stag">Assembly</span></div></div>
+      <div class="skill-card fi"><div class="sc-head"><div class="sc-icon i-r">📊</div><div class="sc-title">Project Management</div></div><div class="stags"><span class="stag">Microsoft Project</span><span class="stag">Primavera P6</span><span class="stag">Risk Mitigation</span><span class="stag">Budgeting</span><span class="stag">SWOT Analysis</span><span class="stag">WBS / Gantt</span><span class="stag">Cost-Benefit Analysis</span></div></div>
+      <div class="skill-card fi"><div class="sc-head"><div class="sc-icon i-g">📋</div><div class="sc-title">Regulatory & Compliance</div></div><div class="stags"><span class="stag">IEEE</span><span class="stag">NERC</span><span class="stag">NESC</span><span class="stag">ANSI</span></div></div>
+      <div class="skill-card fi"><div class="sc-head"><div class="sc-icon i-gr">🌟</div><div class="sc-title">Business & Leadership</div></div><div class="stags"><span class="stag">Strategic Planning</span><span class="stag">Servant Leadership</span><span class="stag">Data Analytics</span><span class="stag">Financial Analysis</span><span class="stag">Market Strategy</span><span class="stag">Change Management</span><span class="stag">Team Development</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PROJECTS ══ -->
+<div class="sw" id="projects">
+  <div class="si">
+    <div class="sec-head fi">
+      <p class="sec-eyebrow">Real Impact</p>
+      <h2>Featured <span>Projects</span></h2>
+      <div class="sec-bar"></div>
+      <p class="sec-sub">Engineering and leadership projects that delivered measurable outcomes in the energy sector and beyond.</p>
+    </div>
+    <div class="proj-grid">
+
+      <!-- 1 -->
+      <div class="proj-card pc-1 fi">
+        <div class="proj-header">
+          <div class="proj-icon">⚡</div>
+          <span class="proj-impact">+50% Fault Detection</span>
+        </div>
+        <p class="proj-org">Great River Energy · 2023–Present</p>
+        <p class="proj-title">Advanced Substation Protection Scheme Upgrade</p>
+        <p class="proj-desc">Led the full design and implementation of advanced protection schemes for transformers, breakers, and reactors across multiple substation upgrade projects, ensuring NERC compliance and significantly improving system reliability.</p>
+        <div class="proj-outcomes">
+          <p class="proj-outcome-title">Key Outcomes</p>
+          <ul class="proj-outcome-list">
+            <li>Improved <strong>fault detection efficiency by 50%</strong> through advanced relay scheme design</li>
+            <li>Achieved full <strong>NERC compliance</strong> across all upgraded substations</li>
+            <li>Conducted relay coordination studies and fault current analysis for system resiliency</li>
+            <li>Developed and maintained all engineering documentation per IEEE/ANSI standards</li>
+          </ul>
+        </div>
+        <div class="proj-tags"><span class="ptag">Relay Coordination</span><span class="ptag">NERC</span><span class="ptag">Protection Design</span><span class="ptag">IEEE</span><span class="ptag">ASPEN</span><span class="ptag">CAPÉ</span></div>
+      </div>
+
+      <!-- 2 -->
+      <div class="proj-card pc-2 fi">
+        <div class="proj-header">
+          <div class="proj-icon">📈</div>
+          <span class="proj-impact pi-p">30% Faster Delivery</span>
+        </div>
+        <p class="proj-org">Great River Energy · 2023–Present</p>
+        <p class="proj-title">Project Efficiency & Risk Assessment Initiative</p>
+        <p class="proj-desc">Spearheaded a company-wide efficiency initiative targeting project delivery, risk management, and success-rate improvements across the substation engineering portfolio using process optimization and data-driven frameworks.</p>
+        <div class="proj-outcomes">
+          <p class="proj-outcome-title">Key Outcomes</p>
+          <ul class="proj-outcome-list">
+            <li>Reduced <strong>project timelines by 30%</strong> through workflow optimization</li>
+            <li>Enhanced <strong>risk assessment strategies by 40%</strong> using structured frameworks</li>
+            <li>Increased overall <strong>project success rates by 25%</strong></li>
+            <li>Implemented process mapping and quantitative analysis tools</li>
+          </ul>
+        </div>
+        <div class="proj-tags"><span class="ptag">Risk Mitigation</span><span class="ptag">Primavera P6</span><span class="ptag">Process Mapping</span><span class="ptag">MS Project</span></div>
+      </div>
+
+      <!-- 3 -->
+      <div class="proj-card pc-3 fi">
+        <div class="proj-header">
+          <div class="proj-icon">💰</div>
+          <span class="proj-impact pi-g">20% Cost Reduction</span>
+        </div>
+        <p class="proj-org">Great River Energy · MBA Applied Project</p>
+        <p class="proj-title">Budget Recovery & Cost Optimization Analysis</p>
+        <p class="proj-desc">Applied data-driven decision-making and MBA financial analysis skills to address a significant budget overrun on a large substation project. Used cost-benefit analysis to identify savings opportunities and streamline delivery.</p>
+        <div class="proj-outcomes">
+          <p class="proj-outcome-title">Key Outcomes</p>
+          <ul class="proj-outcome-list">
+            <li>Identified cost savings that produced a <strong>20% reduction in project costs</strong></li>
+            <li>Streamlined the delivery schedule through evidence-based resource reallocation</li>
+            <li>Applied <strong>cost-benefit analysis</strong> and financial synthesis skills from MBA coursework</li>
+            <li>Demonstrated value of data-driven decision-making in field engineering contexts</li>
+          </ul>
+        </div>
+        <div class="proj-tags"><span class="ptag">Cost-Benefit Analysis</span><span class="ptag">Data Analytics</span><span class="ptag">Financial Planning</span><span class="ptag">BUSN625</span></div>
+      </div>
+
+      <!-- 4 -->
+      <div class="proj-card pc-4 fi">
+        <div class="proj-header">
+          <div class="proj-icon">🔌</div>
+          <span class="proj-impact">SCADA & RTU Build</span>
+        </div>
+        <p class="proj-org">Xcel Energy · 2021–2023</p>
+        <p class="proj-title">SCADA Integration & Relay Protection Modeling</p>
+        <p class="proj-desc">Contributed to the design, testing, and integration of substation protection systems at Xcel Energy, with a focus on SCADA integration, relay modeling, and automation to strengthen grid resilience and real-time monitoring.</p>
+        <div class="proj-outcomes">
+          <p class="proj-outcome-title">Key Outcomes</p>
+          <ul class="proj-outcome-list">
+            <li>Modeled protective relays with <strong>CAPÉ software</strong> for accurate fault response</li>
+            <li>Completed RTU configuration and SCADA integration for multiple substations</li>
+            <li>Performed relay testing, event analysis, and lightning protection assessments</li>
+            <li>Developed one-line diagrams, grounding plans, and protection schemes in AutoCAD</li>
+          </ul>
+        </div>
+        <div class="proj-tags"><span class="ptag">CAPÉ</span><span class="ptag">SCADA</span><span class="ptag">RTU</span><span class="ptag">AutoCAD</span><span class="ptag">Protection Testing</span></div>
+      </div>
+
+      <!-- 5 -->
+      <div class="proj-card pc-5 fi">
+        <div class="proj-header">
+          <div class="proj-icon">🎓</div>
+          <span class="proj-impact pi-g">MBA Capstone</span>
+        </div>
+        <p class="proj-org">Bethel University — LEAD 795 · 2025</p>
+        <p class="proj-title">Integrative Team Capstone — Client Strategy Project</p>
+        <p class="proj-desc">Led a cross-functional MBA team through a full strategic project for an external client organization, applying all MBA program skills — from strategic planning and financial analysis to data analytics and stakeholder communication.</p>
+        <div class="proj-outcomes">
+          <p class="proj-outcome-title">Key Outcomes</p>
+          <ul class="proj-outcome-list">
+            <li>Built comprehensive <strong>WBS and Gantt charts</strong> to manage tasks and timelines</li>
+            <li>Applied <strong>Team Strengths Matrix</strong> to optimize cross-functional collaboration</li>
+            <li>Delivered professional updates and final deliverables to client organization</li>
+            <li>Resolved complex team challenges through strategic planning and problem-solving</li>
+          </ul>
+        </div>
+        <div class="proj-tags"><span class="ptag">WBS</span><span class="ptag">Gantt Chart</span><span class="ptag">Team Leadership</span><span class="ptag">Strategic Planning</span><span class="ptag">Client Relations</span></div>
+      </div>
+
+      <!-- 6 -->
+      <div class="proj-card pc-6 fi">
+        <div class="proj-header">
+          <div class="proj-icon">🌍</div>
+          <span class="proj-impact pi-p">DEI Leadership</span>
+        </div>
+        <p class="proj-org">Great River Energy · 2023–Present</p>
+        <p class="proj-title">People of Color Group — Diversity & Inclusion Program</p>
+        <p class="proj-desc">As Chair of the People of Color Group at Great River Energy, built and executed a comprehensive diversity, equity, and inclusion program that strengthened organizational culture, employee engagement, and community visibility.</p>
+        <div class="proj-outcomes">
+          <p class="proj-outcome-title">Key Outcomes</p>
+          <ul class="proj-outcome-list">
+            <li>Organized professional development events, volunteer programs, and ERG initiatives</li>
+            <li>Represented GRE at external career fairs as a <strong>GRE Ambassador</strong></li>
+            <li>Served on <strong>MEG Planning Committee</strong>, coordinating cooperative member engagement</li>
+            <li>Advocated for STEM education in underrepresented communities across Minnesota</li>
+          </ul>
+        </div>
+        <div class="proj-tags"><span class="ptag">DEI Leadership</span><span class="ptag">Community Advocacy</span><span class="ptag">Servant Leadership</span><span class="ptag">STEM Mentoring</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ EXPERIENCE ══ -->
+<div class="sw" id="experience" style="background:var(--bg3);">
+  <div class="si">
+    <div class="sec-head fi">
+      <p class="sec-eyebrow">Career Journey</p>
+      <h2>Work <span>Experience</span></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="exp-list">
+      <div class="exp-card fi">
+        <div>
+          <p class="exp-date">Aug 2023 — Present</p>
+          <p class="exp-co">Great River Energy<br>Maple Grove, MN</p>
+          <span class="exp-badge">Current Role</span>
+        </div>
+        <div>
+          <p class="exp-role">Substation Engineer & Project Manager</p>
+          <p class="exp-desc">Lead protection and control upgrade projects across GRE's substation portfolio — from design and vendor coordination through field execution, regulatory compliance, and team mentorship.</p>
+          <ul class="exp-ul">
+            <li>Design and implement advanced protection schemes for transformers, breakers, and reactors — improving <strong>fault detection efficiency by 50%</strong> with full NERC compliance.</li>
+            <li>Spearheaded efficiency initiatives: <strong>30% reduction in project timelines</strong>, 40% improvement in risk assessment, 25% increase in project success rates.</li>
+            <li>Conduct relay coordination, fault current analysis, and technical studies to enhance system reliability and resiliency.</li>
+            <li>Collaborate with internal teams, vendors, and field engineers; maintain compliance with IEEE, ANSI, and NESC standards.</li>
+            <li>Develop and maintain engineering documentation ensuring accuracy and adherence to best practices.</li>
+            <li>Mentor junior engineers and interns, fostering skill development and knowledge transfer.</li>
+          </ul>
+          <div class="etags"><span class="et">Relay Coordination</span><span class="et">NERC Compliance</span><span class="et">Substation Design</span><span class="etr">Project Management</span><span class="etr">Risk Mitigation</span><span class="etr">Leadership</span></div>
+        </div>
+      </div>
+      <div class="exp-card fi">
+        <div>
+          <p class="exp-date">May 2021 — Jul 2023</p>
+          <p class="exp-co">Xcel Energy<br>Saint Paul, MN</p>
+          <span class="exp-badge">Internship</span>
+        </div>
+        <div>
+          <p class="exp-role">System Protection Engineering Intern</p>
+          <p class="exp-desc">Supported the design and analysis of substation protection systems across Xcel Energy's grid, gaining comprehensive hands-on experience with relay testing, SCADA integration, and power distribution studies.</p>
+          <ul class="exp-ul">
+            <li>Assisted in relay coordination and fault current studies for substation protection systems.</li>
+            <li>Conducted relay testing, event analysis, and lightning protection assessments to improve power system resilience.</li>
+            <li>Developed one-line diagrams, grounding plans, and protection schemes for substation projects using AutoCAD.</li>
+            <li>Modeled protective relays using <strong>CAPÉ software</strong>, ensuring accuracy in fault response and system protection.</li>
+            <li>Gained hands-on experience with <strong>RTU configuration, SCADA integration</strong>, and automation technologies.</li>
+          </ul>
+          <div class="etags"><span class="et">CAPÉ</span><span class="et">SCADA</span><span class="et">RTU</span><span class="etr">AutoCAD</span><span class="etr">Fault Analysis</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ EDUCATION ══ -->
+<div class="sw" id="education">
+  <div class="si">
+    <div class="sec-head fi">
+      <p class="sec-eyebrow">Academic Foundation</p>
+      <h2>Education <span>& Certifications</span></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card fi">
+        <div class="edu-badge">🎓 Graduate Degree</div>
+        <p class="edu-deg">Master of Business Administration (MBA)</p>
+        <p class="edu-sch">Bethel University — Saint Paul, MN</p>
+        <p class="edu-yr">Expected: December 2025</p>
+        <ul class="edu-highlights">
+          <li>Leadership Theory & Personal Agency</li>
+          <li>Data Analytics for Leaders</li>
+          <li>Managerial Finance & Accounting</li>
+          <li>Operations Management</li>
+          <li>Advanced Competitive Advantage (SWOT)</li>
+          <li>Integrative Team Capstone — LEAD 795</li>
+        </ul>
+        <div class="edu-tags"><span class="edu-tag">Strategic Management</span><span class="edu-tag">Data Analytics</span><span class="edu-tag">Financial Analysis</span><span class="edu-tag">Servant Leadership</span></div>
+      </div>
+      <div class="edu-card g2 fi">
+        <div class="edu-badge">⚡ Undergraduate Degree</div>
+        <p class="edu-deg">B.S. in Electrical Engineering</p>
+        <p class="edu-sch">Bethel University — Saint Paul, MN</p>
+        <p class="edu-yr">Graduated: May 2023</p>
+        <ul class="edu-highlights">
+          <li>Power Systems & Protection Design</li>
+          <li>Circuit and Control Systems Design</li>
+          <li>Signal Processing & Communications</li>
+          <li>Embedded Systems (Verilog, Assembly)</li>
+          <li>MATLAB & LabVIEW Simulation</li>
+        </ul>
+        <div class="edu-tags"><span class="edu-tag">Power Systems</span><span class="edu-tag">Circuit Design</span><span class="edu-tag">Control Systems</span><span class="edu-tag">Signal Processing</span></div>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;">
+      <h3 style="font-family:var(--fh);font-size:1.15rem;font-weight:800;color:var(--text);margin-bottom:1rem;" class="fi">Certifications 🏆</h3>
+      <div class="certs-grid">
+        <div class="cert-card fi"><div class="cert-ic">🏅</div><div><p class="cert-nm">Project Management Professional (PMP)</p><p class="cert-st st-wip">⏳ In Progress</p></div></div>
+        <div class="cert-card fi"><div class="cert-ic">⚡</div><div><p class="cert-nm">NERC Certification</p><p class="cert-st st-wip">⏳ In Progress</p></div></div>
+        <div class="cert-card fi"><div class="cert-ic">✅</div><div><p class="cert-nm">Advanced Relay Protection Training</p><p class="cert-st st-ok">✔ Completed 2023</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MBA OUTCOMES ══ -->
+<div class="sw" id="outcomes">
+  <div class="si">
+    <div class="sec-head fi">
+      <p class="sec-eyebrow">MBA Mastery</p>
+      <h2>Program <span>Outcomes</span></h2>
+      <div class="sec-bar"></div>
+      <p class="sec-sub">Eight MBA program outcomes mastered through real-world application, coursework, and professional experience at Bethel University.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="oc-card fi"><p class="oc-num">MBA OUTCOME 01</p><p class="oc-title">Leadership Theory & Self-Awareness</p><p class="oc-desc">Applied Kouzes & Posner's Five Practices with StrengthsFinder results (Achiever, Strategic) to build a research-backed, strength-led personal leadership model.</p></div>
+      <div class="oc-card fi"><p class="oc-num">MBA OUTCOME 02</p><p class="oc-title">Ethical Leadership (Christian Principles)</p><p class="oc-desc">Chose regulatory compliance over deadline pressure in a real project scenario — demonstrating integrity and accountability grounded in faith-based values.</p></div>
+      <div class="oc-card fi"><p class="oc-num">MBA OUTCOME 03</p><p class="oc-title">Effective Communication in Leadership</p><p class="oc-desc">Refined persuasive communication skills in LEAD 671 and LEAD 795 — presenting complex technical plans to diverse stakeholders including clients, executives, and field teams.</p></div>
+      <div class="oc-card fi"><p class="oc-num">MBA OUTCOME 04</p><p class="oc-title">Internal & External Decision Factors</p><p class="oc-desc">Used SWOT analysis in live substation projects and BUSN680 to balance organizational strengths against external regulatory and market pressures.</p></div>
+      <div class="oc-card fi"><p class="oc-num">MBA OUTCOME 05</p><p class="oc-title">Evidence-Based Business Solutions</p><p class="oc-desc">Applied cost-benefit analysis to resolve a major budget overrun — achieving a 20% cost reduction through data-driven resource reallocation on a GRE substation project.</p></div>
+      <div class="oc-card fi"><p class="oc-num">MBA OUTCOME 06</p><p class="oc-title">Global vs. Local Business Conditions</p><p class="oc-desc">Analyzed international regulatory trends and technology shifts in BUSN641 to inform local project strategies that remain competitive in a global energy market.</p></div>
+      <div class="oc-card fi"><p class="oc-num">MBA OUTCOME 07</p><p class="oc-title">Virtual & Culturally Diverse Leadership</p><p class="oc-desc">Used Team Strengths Matrix in LEAD 795 to leverage diverse team strengths in virtual environments — improving collaboration and project outcomes across cultural boundaries.</p></div>
+      <div class="oc-card fi"><p class="oc-num">MBA OUTCOME 08</p><p class="oc-title">Operational Efficiency & Financial Strategy</p><p class="oc-desc">Combined process mapping, quantitative analysis, and financial data synthesis to improve operational efficiency by 25% and guide high-value investment decisions.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LEADERSHIP ══ -->
+<div class="sw" id="leadership" style="background:var(--bg3);">
+  <div class="si">
+    <div class="sec-head fi">
+      <p class="sec-eyebrow">Beyond Engineering</p>
+      <h2>Leadership & <span>Community</span></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="lead-grid">
+      <div class="lead-card fi"><div class="lead-badge">Great River Energy</div><p class="lead-role">Chair, People of Color Group</p><p class="lead-desc">Lead diversity, equity, and inclusion initiatives — organizing professional development events, volunteer programs, and fostering a culture of belonging across the organization.</p></div>
+      <div class="lead-card fi"><div class="lead-badge">Great River Energy</div><p class="lead-role">MEG Planning Committee Member</p><p class="lead-desc">Coordinate topics, logistics, and engagement strategies for member cooperative meetings and organizational development initiatives.</p></div>
+      <div class="lead-card fi"><div class="lead-badge">Great River Energy</div><p class="lead-role">GRE Ambassador</p><p class="lead-desc">Represented the company at career fairs and professional events, advocating for the next generation of engineers and energy professionals.</p></div>
+      <div class="lead-card fi"><div class="lead-badge">IEEE · NSBE · SWE</div><p class="lead-role">Professional Associations</p><p class="lead-desc">Active member of IEEE, NSBE, and SWE — engaged in professional development, mentoring, and advocacy for diversity and excellence in engineering.</p></div>
+      <div class="lead-card fi"><div class="lead-badge">Conference Speaker</div><p class="lead-role">Industry Speaker & Panelist</p><p class="lead-desc">Frequent speaker at professional conferences on energy sector advancements, engineering best practices, and diversity in technical fields.</p></div>
+      <div class="lead-card fi"><div class="lead-badge">STEM Advocacy</div><p class="lead-role">Mentor & STEM Champion</p><p class="lead-desc">Passionate about mentoring aspiring engineers and advocating for STEM education access in underrepresented communities across Minnesota.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<div class="sw" id="contact">
+  <div class="si">
+    <div class="sec-head fi">
+      <p class="sec-eyebrow">Get in Touch</p>
+      <h2>Let's <span>Connect</span></h2>
+      <div class="sec-bar"></div>
+      <p class="sec-sub">Whether it's a collaboration, speaking opportunity, or just a great conversation — I'd love to hear from you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="fi-l">
+        <p class="cl-title">Reach Out 📬</p>
+        <p>I'm always open to discussing new opportunities, innovative ideas, or connecting with fellow engineers, leaders, and changemakers.</p>
+        <div class="c-links">
+          <a href="mailto:Jirehbab@gmail.com" class="c-link"><div class="c-icon i-r">📧</div><div><p class="c-lbl">Email</p><p class="c-val">Jirehbab@gmail.com</p></div></a>
+          <a href="tel:+16124473624" class="c-link"><div class="c-icon i-t">📱</div><div><p class="c-lbl">Phone</p><p class="c-val">612-447-3624</p></div></a>
+          <a href="https://www.linkedin.com/in/jirehbablola/" target="_blank" rel="noopener" class="c-link"><div class="c-icon i-b">💼</div><div><p class="c-lbl">LinkedIn</p><p class="c-val">linkedin.com/in/jirehbablola ↗</p></div></a>
+          <a href="https://github.com/jirehbabalola-sudo" target="_blank" rel="noopener" class="c-link"><div class="c-icon i-p">🐙</div><div><p class="c-lbl">GitHub</p><p class="c-val">github.com/jirehbabalola-sudo ↗</p></div></a>
+          <a href="https://drive.google.com/file/d/1TpShSk_yI9atnpY8jcivuUlUax-jylPI/view?usp=sharing" target="_blank" rel="noopener" class="c-link"><div class="c-icon i-g">📄</div><div><p class="c-lbl">Resume</p><p class="c-val">View / Download PDF ↗</p></div></a>
+        </div>
+      </div>
+      <div class="cright fi-r">
+        <div class="cp-card">
+          <p class="cp-lbl">✨ Core Purpose</p>
+          <p class="cp-q">"<span>Understanding Hope</span> — creating opportunities, fostering resilience, and believing in greater possibilities for every person I serve."</p>
+        </div>
+        <div class="aff-card">
+          <p class="cp-lbl">🏛️ Professional Affiliations</p>
+          <div class="aff-list"><span class="aff-pill">IEEE — Member</span><span class="aff-pill">NSBE — Active Member</span><span class="aff-pill">SWE — Ally & Contributor</span></div>
+        </div>
+        <div class="aff-card">
+          <p class="cp-lbl">🌟 StrengthsFinder Top 5</p>
+          <div class="aff-list"><span class="aff-pill">Achiever</span><span class="aff-pill">Analytical</span><span class="aff-pill">Strategic</span><span class="aff-pill">Learner</span><span class="aff-pill">Responsibility</span></div>
+        </div>
+        <div class="aff-card">
+          <p class="cp-lbl">📍 Location</p>
+          <div class="aff-list"><span class="aff-pill">Maple Grove, MN</span><span class="aff-pill">Open to Opportunities</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
-  &copy; 2026 Jireh Babalola &nbsp;·&nbsp; Substation Engineer &amp; Project Manager &nbsp;·&nbsp; Built with purpose.
+  <div class="footer-inner">
+    <p class="footer-name">Jireh Babalola</p>
+    <p>Substation Engineer · Project Manager · MBA Candidate · Designed & built with ❤️</p>
+    <p style="margin-top:.5rem;"><a href="mailto:Jirehbab@gmail.com">Jirehbab@gmail.com</a> &nbsp;·&nbsp; &copy; 2026 All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
+/* Nav scroll */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
+});
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+/* Typewriter */
+const roles=['Substation Engineer','Project Manager','MBA Candidate','Diversity Advocate','Servant Leader','STEM Mentor','Power Systems Expert'];
+let ri=0,ci=0,del=false;
+const el=document.getElementById('tw');
+function type(){
+  const w=roles[ri];
+  if(!del){el.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,1800);return;}}
+  else{el.textContent=w.slice(0,--ci);if(ci===0){del=false;ri=(ri+1)%roles.length;}}
+  setTimeout(type,del?45:85);
+}
+type();
+
+/* Scroll reveal */
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('v'),i*80);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(e=>obs.observe(e));
+
+/* EQ bars */
+const eqObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.eq-fill').forEach(bar=>{
+        bar.style.transform=`scaleX(${bar.style.getPropertyValue('--w')||0.87})`;
+      });
+      eqObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('.eq-box').forEach(e=>eqObs.observe(e));
+
+/* Count-up for hero mini cards */
+function countUp(el,target){
+  let cur=0;const dur=1600;const step=dur/target;
+  const t=setInterval(()=>{
+    cur++;el.textContent=cur+'%';
+    if(cur>=target)clearInterval(t);
+  },step);
+}
+const countObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-count]').forEach(el=>{
+        countUp(el,parseInt(el.dataset.count));
+      });
+      countObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.hero-card-row').forEach(e=>countObs.observe(e));
 </script>
 </body>
 </html>
