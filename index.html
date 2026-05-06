@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jireh Babalola | Engineer & Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #07101f;
+      --bg2:       #0c1830;
+      --bg3:       #111f3a;
+      --teal:      #05c9b0;
+      --teal-dim:  #06a08c;
+      --gold:      #e8a825;
+      --gold-dim:  #b88218;
+      --text:      #e8eef8;
+      --text-2:    #8ba3c9;
+      --text-3:    #4f6a8f;
+      --border:    rgba(255,255,255,0.08);
+      --font-h:    'Syne', sans-serif;
+      --font-b:    'IBM Plex Sans', sans-serif;
+      --font-m:    'IBM Plex Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 4vw;
+      background: rgba(7,16,31,0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-h);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--font-m);
+      font-size: 0.78rem;
+      color: var(--text-2);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 7rem 4vw 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px; margin: 0 auto; width: 100%;
+    }
+    .hero-tag {
+      font-family: var(--font-m);
+      font-size: 0.78rem;
+      color: var(--teal);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-tag::before {
+      content: '';
+      display: block; width: 32px; height: 1px;
+      background: var(--teal);
+    }
+    h1 {
+      font-family: var(--font-h);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    h1 .teal { color: var(--teal); }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-2);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 4px;
+      font-family: var(--font-m);
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: #07101f;
+      border: 2px solid var(--teal);
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: transparent; color: var(--teal); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* HERO STATS */
+    .hero-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .stat-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .stat-card:hover { border-color: var(--teal); }
+    .stat-num {
+      font-family: var(--font-h);
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      font-weight: 300;
+    }
+    .stat-big {
+      grid-column: 1 / -1;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .stat-big .stat-num { font-size: 2rem; }
+
+    /* SECTION */
+    section { padding: 6rem 4vw; max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-m);
+      font-size: 0.72rem;
+      color: var(--teal);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-family: var(--font-h);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 3rem;
+      letter-spacing: -0.02em;
+    }
+    h2 em { color: var(--teal); font-style: normal; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    /* ABOUT */
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--text-2);
+      margin-bottom: 1.2rem;
+      font-weight: 300;
+      font-size: 1.05rem;
+    }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .about-aside { display: flex; flex-direction: column; gap: 1rem; }
+    .info-item {
+      display: flex; align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .info-icon {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      color: var(--teal);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      min-width: 52px;
+      margin-top: 0.1rem;
+    }
+    .info-val { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+
+    /* EXPERIENCE */
+    #experience { max-width: 1200px; margin: 0 auto; padding: 6rem 4vw; }
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-meta { position: sticky; top: 6rem; align-self: start; }
+    .exp-date {
+      font-family: var(--font-m);
+      font-size: 0.75rem;
+      color: var(--teal);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .exp-company {
+      font-family: var(--font-h);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-2);
+    }
+    .exp-title {
+      font-family: var(--font-h);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .exp-body p {
+      color: var(--text-2);
+      font-weight: 300;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .exp-bullets li {
+      display: flex; gap: 0.75rem;
+      font-size: 0.9rem; color: var(--text-2); font-weight: 300;
+    }
+    .exp-bullets li::before {
+      content: '→';
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+    .exp-bullets li strong { color: var(--text); font-weight: 500; }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .tag {
+      font-family: var(--font-m);
+      font-size: 0.72rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+    }
+    .tag-teal { background: rgba(5,201,176,0.1); color: var(--teal); border: 1px solid rgba(5,201,176,0.25); }
+    .tag-gold  { background: rgba(232,168,37,0.1); color: var(--gold); border: 1px solid rgba(232,168,37,0.25); }
+    .tag-dim   { background: rgba(255,255,255,0.04); color: var(--text-2); border: 1px solid var(--border); }
+
+    /* SKILLS */
+    #skills { padding: 6rem 4vw; }
+    #skills > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-group {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: border-color 0.2s;
+    }
+    .skill-group:hover { border-color: var(--teal); }
+    .skill-group-title {
+      font-family: var(--font-h);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    /* EDUCATION */
+    #education { padding: 6rem 4vw; max-width: 1200px; margin: 0 auto; }
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .edu-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: border-color 0.2s;
+    }
+    .edu-card:hover { border-color: var(--gold); }
+    .edu-school {
+      font-family: var(--font-m);
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .edu-degree {
+      font-family: var(--font-h);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .edu-year { font-size: 0.85rem; color: var(--text-2); }
+
+    /* LEADERSHIP */
+    #leadership { padding: 6rem 4vw; max-width: 1200px; margin: 0 auto; }
+    .lead-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .lead-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: border-color 0.2s;
+    }
+    .lead-card:hover { border-color: var(--teal); }
+    .lead-role {
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .lead-org {
+      font-family: var(--font-m);
+      font-size: 0.72rem;
+      color: var(--teal);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .lead-desc { font-size: 0.88rem; color: var(--text-2); font-weight: 300; }
+
+    /* CERTIFICATIONS */
+    .cert-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+    .cert-pill {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.6rem 1.2rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+    }
+    .cert-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-green { background: var(--teal); }
+    .dot-amber { background: var(--gold); }
+    .cert-name { font-size: 0.88rem; color: var(--text); }
+    .cert-status {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      color: var(--text-3);
+    }
+
+    /* CONTACT */
+    #contact {
+      padding: 6rem 4vw;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+    #contact > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-left p {
+      color: var(--text-2);
+      font-weight: 300;
+      max-width: 400px;
+      margin-bottom: 2rem;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: var(--teal); }
+    .contact-link-icon {
+      font-family: var(--font-m);
+      font-size: 0.7rem;
+      color: var(--teal);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      min-width: 60px;
+    }
+    .contact-link-val { font-size: 0.9rem; color: var(--text); }
+    .affiliations { margin-top: 2rem; }
+    .aff-title {
+      font-family: var(--font-m);
+      font-size: 0.72rem;
+      color: var(--text-3);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .aff-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .aff-badge {
+      padding: 0.4rem 0.9rem;
+      background: rgba(5,201,176,0.06);
+      border: 1px solid rgba(5,201,176,0.2);
+      border-radius: 3px;
+      font-family: var(--font-m);
+      font-size: 0.72rem;
+      color: var(--teal);
+      letter-spacing: 0.08em;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem 4vw;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      font-family: var(--font-m);
+      font-size: 0.75rem;
+      color: var(--text-3);
+      letter-spacing: 0.05em;
+    }
+
+    /* ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .hero-grid, #about .about-grid, .exp-item, .contact-grid, .edu-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      h1 { font-size: 2.6rem; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      section, #experience, #education, #leadership, #contact { padding: 4rem 1.25rem; }
+      .exp-meta { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">JB<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="hero-tag">Substation Engineer &amp; MBA Candidate</p>
+      <h1>Jireh<br /><span class="teal">Babalola</span></h1>
+      <p class="hero-sub">
+        Bridging electrical engineering and strategic leadership — designing resilient power systems, driving project excellence, and championing diversity in the energy sector.
+      </p>
+      <div class="btn-row">
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="#experience" class="btn btn-ghost">View My Work</a>
+        <!-- UPDATE: Replace # with your actual resume link -->
+        <a href="#" class="btn btn-ghost" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+    </div>
+    <div class="hero-stats fade-up">
+      <div class="stat-card">
+        <div class="stat-num">50%</div>
+        <div class="stat-label">Improvement in fault detection efficiency</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">30%</div>
+        <div class="stat-label">Reduction in project timelines</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years in power systems &amp; protection</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">MBA</div>
+        <div class="stat-label">Bethel University — Dec 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">About Me</p>
+  <h2>Engineer. Leader. <em>Changemaker.</em></h2>
+  <div class="about-grid fade-up">
+    <div class="about-text">
+      <p>
+        I am a <strong>Substation Engineer &amp; Project Manager</strong> at Great River Energy with a passion for innovation, sustainability, and lifelong learning. My career sits at the intersection of deep technical expertise and people-centered leadership.
+      </p>
+      <p>
+        With a <strong>B.S. in Electrical Engineering</strong> from Bethel University and an MBA in progress, I have built the analytical foundation and business acumen to lead complex projects, mentor diverse teams, and drive long-term organizational success in the energy sector.
+      </p>
+      <p>
+        Beyond the technical, I am committed to <strong>diversity and inclusion</strong> — serving as Chair of the People of Color Group at Great River Energy, speaking at industry conferences, and advocating for STEM education in underrepresented communities.
+      </p>
+      <p>
+        My core purpose: <em>Understanding Hope</em> — creating opportunities, fostering resilience, and believing in greater possibilities for the people and communities I serve.
+      </p>
+    </div>
+    <div class="about-aside">
+      <div class="info-item">
+        <span class="info-icon">Role</span>
+        <span class="info-val">Substation Engineer &amp; Project Manager</span>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">Based</span>
+        <span class="info-val">Maple Grove, MN</span>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">Email</span>
+        <span class="info-val">Jirehbab@gmail.com</span>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">Phone</span>
+        <span class="info-val">612-447-3624</span>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">Focus</span>
+        <span class="info-val">Power Systems · Leadership · Sustainability</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Experience</p>
+  <h2>Where I've <em>Made Impact</em></h2>
+  <div class="exp-list">
+
+    <!-- GRE -->
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <p class="exp-date">Aug 2023 — Present</p>
+        <p class="exp-company">Great River Energy<br />Maple Grove, MN</p>
+      </div>
+      <div class="exp-body">
+        <p class="exp-title">Substation Engineer &amp; Project Manager</p>
+        <p>Lead substation protection and control upgrade projects from design through execution, ensuring delivery within budget, on schedule, and in full regulatory compliance.</p>
+        <ul class="exp-bullets">
+          <li>Designed and implemented advanced protection schemes for transformers, breakers, and reactors, improving <strong>fault detection efficiency by 50%</strong> and achieving NERC compliance.</li>
+          <li>Spearheaded efficiency initiatives that <strong>reduced project timelines by 30%</strong>, enhanced risk assessment strategies by 40%, and increased project success rates by 25%.</li>
+          <li>Conducted technical studies — relay coordination and fault current analysis — to enhance system reliability and resiliency.</li>
+          <li>Collaborated with internal teams, vendors, and field engineers; maintained compliance with IEEE, ANSI, and NESC standards.</li>
+          <li>Mentored junior engineers and interns, fostering knowledge transfer and professional growth.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag tag-teal">Relay Coordination</span>
+          <span class="tag tag-teal">NERC Compliance</span>
+          <span class="tag tag-teal">Substation Design</span>
+          <span class="tag tag-gold">Project Management</span>
+          <span class="tag tag-gold">Risk Mitigation</span>
+          <span class="tag tag-dim">SCADA</span>
+          <span class="tag tag-dim">IEEE / ANSI / NESC</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Xcel -->
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <p class="exp-date">May 2021 — Jul 2023</p>
+        <p class="exp-company">Xcel Energy<br />Saint Paul, MN</p>
+      </div>
+      <div class="exp-body">
+        <p class="exp-title">System Protection Engineering Intern</p>
+        <p>Supported the design and analysis of substation protection systems while gaining hands-on experience across relay testing, SCADA integration, and power distribution studies.</p>
+        <ul class="exp-bullets">
+          <li>Assisted in relay coordination and fault current studies for substation protection systems.</li>
+          <li>Conducted relay testing, event analysis, and lightning protection assessments to improve power system resilience.</li>
+          <li>Developed one-line diagrams, grounding plans, and protection schemes.</li>
+          <li>Modeled protective relays using <strong>CAPÉ software</strong>, ensuring accuracy in fault response.</li>
+          <li>Gained hands-on experience with RTU configuration, SCADA integration, and automation technologies.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag tag-teal">CAPÉ Software</span>
+          <span class="tag tag-teal">RTU Configuration</span>
+          <span class="tag tag-dim">Fault Analysis</span>
+          <span class="tag tag-dim">SCADA Integration</span>
+          <span class="tag tag-dim">AutoCAD</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Technical Skills</p>
+  <h2>Tools &amp; <em>Expertise</em></h2>
+  <div class="skills-grid fade-up">
+    <div class="skill-group">
+      <p class="skill-group-title">Power Systems &amp; Protection</p>
+      <div class="skill-tags">
+        <span class="tag tag-teal">Relay Coordination</span>
+        <span class="tag tag-teal">Fault Analysis</span>
+        <span class="tag tag-teal">Substation Design</span>
+        <span class="tag tag-teal">SCADA Integration</span>
+        <span class="tag tag-teal">RTU Configuration</span>
+        <span class="tag tag-teal">Protection Schemes</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-title">Software</p>
+      <div class="skill-tags">
+        <span class="tag tag-dim">ASPEN</span>
+        <span class="tag tag-dim">CAPÉ</span>
+        <span class="tag tag-dim">AutoCAD</span>
+        <span class="tag tag-dim">MATLAB</span>
+        <span class="tag tag-dim">LabVIEW</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-title">Programming</p>
+      <div class="skill-tags">
+        <span class="tag tag-gold">Python</span>
+        <span class="tag tag-gold">C++</span>
+        <span class="tag tag-gold">Verilog</span>
+        <span class="tag tag-gold">Assembly</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-title">Project Management</p>
+      <div class="skill-tags">
+        <span class="tag tag-dim">Microsoft Project</span>
+        <span class="tag tag-dim">Primavera P6</span>
+        <span class="tag tag-dim">Budgeting</span>
+        <span class="tag tag-dim">Risk Mitigation</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-title">Regulatory &amp; Compliance</p>
+      <div class="skill-tags">
+        <span class="tag tag-teal">IEEE</span>
+        <span class="tag tag-teal">NERC</span>
+        <span class="tag tag-teal">NESC</span>
+        <span class="tag tag-teal">ANSI</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-title">Leadership Strengths</p>
+      <div class="skill-tags">
+        <span class="tag tag-gold">Strategic Thinking</span>
+        <span class="tag tag-gold">Achiever</span>
+        <span class="tag tag-gold">Analytical</span>
+        <span class="tag tag-gold">Learner</span>
+        <span class="tag tag-gold">Responsibility</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Education</p>
+  <h2>Academic <em>Foundation</em></h2>
+  <div class="edu-grid fade-up">
+    <div class="edu-card">
+      <p class="edu-school">Bethel University — Saint Paul, MN</p>
+      <p class="edu-degree">Master of Business Administration (MBA)</p>
+      <p class="edu-year">Expected: December 2025</p>
+      <div class="exp-tags" style="margin-top:1rem;">
+        <span class="tag tag-gold">Leadership</span>
+        <span class="tag tag-gold">Strategic Management</span>
+        <span class="tag tag-gold">Data Analytics</span>
+        <span class="tag tag-dim">Finance</span>
+        <span class="tag tag-dim">Operations</span>
+      </div>
+    </div>
+    <div class="edu-card">
+      <p class="edu-school">Bethel University — Saint Paul, MN</p>
+      <p class="edu-degree">B.S. in Electrical Engineering</p>
+      <p class="edu-year">Graduated: May 2023</p>
+      <div class="exp-tags" style="margin-top:1rem;">
+        <span class="tag tag-teal">Power Systems</span>
+        <span class="tag tag-teal">Circuit Design</span>
+        <span class="tag tag-teal">Control Systems</span>
+        <span class="tag tag-dim">Signal Processing</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certifications -->
+  <div style="margin-top:3rem;" class="fade-up">
+    <p class="section-label" style="margin-bottom:0.75rem;">Certifications</p>
+    <div class="cert-row">
+      <div class="cert-pill">
+        <span class="cert-dot dot-amber"></span>
+        <span class="cert-name">Project Management Professional (PMP)</span>
+        <span class="cert-status">In Progress</span>
+      </div>
+      <div class="cert-pill">
+        <span class="cert-dot dot-amber"></span>
+        <span class="cert-name">NERC Certification</span>
+        <span class="cert-status">In Progress</span>
+      </div>
+      <div class="cert-pill">
+        <span class="cert-dot dot-green"></span>
+        <span class="cert-name">Advanced Relay Protection Training</span>
+        <span class="cert-status">Completed 2023</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <p class="section-label">Leadership &amp; Involvement</p>
+  <h2>Community &amp; <em>Advocacy</em></h2>
+  <div class="lead-grid fade-up">
+    <div class="lead-card">
+      <p class="lead-org">Great River Energy</p>
+      <p class="lead-role">Chair, People of Color Group</p>
+      <p class="lead-desc">Lead diversity, inclusion, and professional development initiatives — organizing events, volunteer programs, and fostering a culture of belonging.</p>
+    </div>
+    <div class="lead-card">
+      <p class="lead-org">Great River Energy</p>
+      <p class="lead-role">MEG Planning Committee Member</p>
+      <p class="lead-desc">Coordinate topics, logistics, and engagement strategies for cooperative member meetings and organizational initiatives.</p>
+    </div>
+    <div class="lead-card">
+      <p class="lead-org">Great River Energy</p>
+      <p class="lead-role">GRE Ambassador</p>
+      <p class="lead-desc">Represented the company at career fairs, advocating for the next generation of engineers and professionals in the energy sector.</p>
+    </div>
+    <div class="lead-card">
+      <p class="lead-org">Professional Speaking</p>
+      <p class="lead-role">Conference Speaker</p>
+      <p class="lead-desc">Frequent speaker at professional conferences on energy sector advancements, engineering best practices, and diversity in STEM.</p>
+    </div>
+    <div class="lead-card">
+      <p class="lead-org">STEM Advocacy</p>
+      <p class="lead-role">Mentor &amp; Community Advocate</p>
+      <p class="lead-desc">Passionate about mentoring aspiring engineers and advocating for STEM education in underrepresented communities.</p>
+    </div>
+    <div class="lead-card">
+      <p class="lead-org">Servant Leadership</p>
+      <p class="lead-role">Faith &amp; Work Integration</p>
+      <p class="lead-desc">Committed to integrating faith-based values in the workplace — fostering ethical decision-making, accountability, and servant leadership.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- CONTACT -->
+<div id="contact" style="padding: 6rem 4vw; background: var(--bg2); border-top: 1px solid var(--border);">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p class="section-label">Contact</p>
+    <h2>Let's <em>Connect</em></h2>
+    <div class="contact-grid fade-up">
+      <div class="contact-left">
+        <p>Whether you're exploring collaboration opportunities, seeking a speaker for your next event, or simply want to connect — I'd love to hear from you.</p>
+        <div class="contact-links">
+          <a href="mailto:Jirehbab@gmail.com" class="contact-link">
+            <span class="contact-link-icon">Email</span>
+            <span class="contact-link-val">Jirehbab@gmail.com</span>
+          </a>
+          <a href="tel:+16124473624" class="contact-link">
+            <span class="contact-link-icon">Phone</span>
+            <span class="contact-link-val">612-447-3624</span>
+          </a>
+          <!-- UPDATE: Replace # with your actual LinkedIn URL -->
+          <a href="#" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">LinkedIn</span>
+            <span class="contact-link-val">linkedin.com/in/jirehbabalola ↗</span>
+          </a>
+          <a href="https://github.com/jirehbabalola-sudo" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">GitHub</span>
+            <span class="contact-link-val">github.com/jirehbabalola-sudo ↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="affiliations">
+        <p class="aff-title">Professional Affiliations</p>
+        <div class="aff-badges">
+          <span class="aff-badge">IEEE — Member</span>
+          <span class="aff-badge">NSBE — Active Member</span>
+          <span class="aff-badge">SWE — Ally &amp; Contributor</span>
+        </div>
+        <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
+          <p style="font-family: var(--font-m); font-size: 0.72rem; color: var(--teal); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem;">Core Purpose</p>
+          <p style="font-family: var(--font-h); font-size: 1.3rem; font-weight: 600; color: var(--text); line-height: 1.4;">"Understanding Hope — creating opportunities and driving positive change."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 Jireh Babalola &nbsp;·&nbsp; Substation Engineer &amp; Project Manager &nbsp;·&nbsp; Built with purpose.
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
